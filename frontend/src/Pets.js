@@ -40,15 +40,23 @@ const Pets = () => {
                     }}
                   />
                   <div className="card-body">
-                    <p className="card-text">
-                      Name: <strong>{pet.name}</strong> ({pet.animal})<br />
-                      Breed: {pet.breed}
-                      {/* <br />
-                      Birthday: {pet.dateOfBirth}
-                      <br />
-                      Conditions: {pet.conditions} */}
-                      <br />
-                    </p>
+                    <div
+                      className="d-flex justify-content-between align-items-center"
+                      style={{ width: "100%" }} // Ensures the layout stretches across the container
+                    >
+                      <div>
+                        <p className="card-text mb-0">
+                          Name: <strong>{pet.name}</strong> ({pet.animal})<br />
+                          Breed: {pet.breed}
+                        </p>
+                      </div>
+                      <button
+                        className="btn btn-primary"
+                        //onClick={() => handleAdopt(pet.petId)}
+                      >
+                        Adopt
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

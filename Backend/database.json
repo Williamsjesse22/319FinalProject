@@ -1,282 +1,360 @@
-[
-	{
-        "petId": 1,
-        "name": "Buddy",
-        "age": 3,
-        "breed": "Golden Retriever",
-        "animal": "Dog",
-        "conditions": ["Healthy"],
-        "picture": "https://example.com/images/buddy.jpg",
-        "dateOfBirth": "2021-01-03"
-    },
-    {
-        "petId": 2,
-        "name": "Mittens",
-        "age": 5,
-        "breed": "Siamese",
-        "animal": "Cat",
-        "conditions": ["Healthy"],
-        "picture": "https://example.com/images/mittens.jpg",
-        "dateOfBirth": "2019-08-09"
-    },
-    {
-        "petId": 3,
-        "name": "Charlie",
-        "age": 7,
-        "breed": "Labrador",
-        "animal": "Dog",
-        "conditions": ["Arthritis"],
-        "picture": "https://example.com/images/charlie.jpg",
-        "dateOfBirth": "2017-09-20"
-    },
-    {
-        "petId": 4,
-        "name": "Fluffy",
-        "age": 1,
-        "breed": "Angora Rabbit",
-        "animal": "Rabbit",
-        "conditions": ["Healthy"],
-        "picture": "https://example.com/images/fluffy.jpg",
-        "dateOfBirth": "2023-02-01"
-    },
-    {
-        "petId": 5,
-        "name": "Max",
-        "age": 4,
-        "breed": "German Shepherd",
-        "animal": "Dog",
-        "conditions": ["Hip Dysplasia"],
-        "picture": "https://example.com/images/max.jpg",
-        "dateOfBirth": "2020-11-03"
-    },
-    {
-        "petID": 6,
-        "name": "Zoe",
-        "age": 2,
-        "breed": "African Grey Parrot",
-        "animal": "Bird",
-        "conditions": ["Healthy"],
-        "picture": "https://example.com/images/zoe.jpg",
-        "dateOfBirth": "2022-03-11"
-    },
-    {
-        "petID": 7,
-        "name": "Spike",
-        "age": 5,
-        "breed": "Bearded Dragon",
-        "animal": "Reptile",
-        "conditions": ["Healthy"],
-        "picture": "https://example.com/images/spike.jpg",
-        "dateOfBirth": "2019-05-21"
-    },
-    {
-        "petID": 8,
-        "name": "Oscar",
-        "age": 3,
-        "breed": "Beagle",
-        "animal": "Dog",
-        "conditions": ["Healthy"],
-        "picture": "https://example.com/images/oscar.jpg",
-        "dateOfBirth": "2021-07-09"
-    },
-    {
-        "petID": 9,
-        "name": "Daisy",
-        "age": 2,
-        "breed": "Shih Tzu",
-        "animal": "Dog",
-        "conditions": ["Healthy"],
-        "picture": "https://example.com/images/daisy.jpg",
-        "dateOfBirth": "2022-07-04"
-    },
-    {
-        "petID": 10,
-        "name": "Jasper",
-        "age": 3,
-        "breed": "Chinchilla",
-        "animal": "Rodent",
-        "conditions": ["Dental Issues"],
-        "picture": "https://example.com/images/jasper.jpg",
-        "dateOfBirth": "2021-11-16"
-    },
-  {
-    "petID": 11,
-    "name": "Sadie",
-    "age": 5,
-    "breed": "Boxer",
-    "animal": "Dog",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/sadie.jpg",
-	"dateOfBirth": "2022-11-16"
+[{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be041"
   },
-  {
-    "petID": 12,
-    "name": "Lola",
-    "age": 3,
-    "breed": "Dalmatian",
-    "animal": "Dog",
-    "conditions": ["Epilepsy"],
-    "picture": "https://example.com/images/lola.jpg",
-	"dateOfBirth": "2021-11-16"
+  "name": "Buddy",
+  "age": 3,
+  "breed": "Golden Retriever",
+  "animal": "Dog",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://plus.unsplash.com/premium_photo-1694819488591-a43907d1c5cc?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3V0ZSUyMGRvZ3xlbnwwfHwwfHx8MA%3D%3D",
+  "dateOfBirth": "2021-01-03",
+  "petId": 1
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be042"
   },
-  {
-    "petID": 13,
-    "name": "Oliver",
-    "age": 6,
-    "breed": "Ragdoll",
-    "animal": "Cat",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/oliver.jpg",
-	"dateOfBirth": "2021-11-26"
+  "name": "Mittens",
+  "age": 5,
+  "breed": "Siamese",
+  "animal": "Cat",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://images.wagwalkingweb.com/media/daily_wag/blog_articles/hero/1678934108.5188236/everything-you-need-to-know-about-siamese-cats.png",
+  "dateOfBirth": "2019-08-09",
+  "petId": 2
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be043"
   },
-  {
-    "petID": 14,
-    "name": "Maggie",
-    "age": 2,
-    "breed": "Cocker Spaniel",
-    "animal": "Dog",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/maggie.jpg",
-	"dateOfBirth": "2021-12-16"
+  "name": "Charlie",
+  "age": 7,
+  "breed": "Labrador",
+  "animal": "Dog",
+  "conditions": [
+    "Arthritis"
+  ],
+  "picture": "https://happypetproduction.s3.ap-south-1.amazonaws.com/breedFiles/dog/64d6461c7712a1493d6bc279/galleryImages/large_file_1725051174014.webp",
+  "dateOfBirth": "2017-09-20",
+  "petId": 3
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be044"
   },
-  {
-    "petID": 15,
-    "name": "Gizmo",
-    "age": 1,
-    "breed": "Guinea Pig",
-    "animal": "Rodent",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/gizmo.jpg",
-	"dateOfBirth": "2021-11-16"
+  "name": "Fluffy",
+  "age": 1,
+  "breed": "Angora Rabbit",
+  "animal": "Rabbit",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://www.zooplus.co.uk/magazine/wp-content/uploads/2022/03/white-angora-rabbit-on-grass.jpeg",
+  "dateOfBirth": "2023-02-01",
+  "petId": 4
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be045"
   },
-  {
-    "petID": 16,
-    "name": "Cleo",
-    "age": 8,
-    "breed": "Egyptian Mau",
-    "animal": "Cat",
-    "conditions": ["Kidney Disease"],
-    "picture": "https://example.com/images/cleo.jpg",
-	"dateOfBirth": "2021-11-16"
+  "name": "Max",
+  "age": 4,
+  "breed": "German Shepherd",
+  "animal": "Dog",
+  "conditions": [
+    "Hip Dysplasia"
+  ],
+  "picture": "https://mistyridge.com/wp-content/uploads/2023/11/bigstock-German-sheepdogs-black-puppy-s-19450934-1170x1409-1-850x1024.jpg",
+  "dateOfBirth": "2020-11-03",
+  "petId": 5
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be046"
   },
-  {
-    "petID": 17,
-    "name": "Milo",
-    "age": 4,
-    "breed": "Siberian Husky",
-    "animal": "Dog",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/milo.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 6,
+  "name": "Zoe",
+  "age": 2,
+  "breed": "African Grey Parrot",
+  "animal": "Bird",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://www.marylandzoo.org/wp-content/uploads/2017/10/african_grey_web-1024x683.jpg",
+  "dateOfBirth": "2022-03-11"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be047"
   },
-  {
-    "petID": 18,
-    "name": "Princess",
-    "age": 5,
-    "breed": "Bengal",
-    "animal": "Cat",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/princess.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 7,
+  "name": "Spike",
+  "age": 5,
+  "breed": "Bearded Dragon",
+  "animal": "Reptile",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://aquariumswest.com/cdn/shop/articles/aw_bearded_dragon_1024x.jpg?v=1582158799",
+  "dateOfBirth": "2019-05-21"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be048"
   },
-  {
-    "petID": 19,
-    "name": "Barney",
-    "age": 4,
-    "breed": "Rabbit",
-    "animal": "Rabbit",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/barney.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 8,
+  "name": "Oscar",
+  "age": 3,
+  "breed": "Beagle",
+  "animal": "Dog",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://image.petmd.com/files/styles/863x625/public/2022-10/beagle-dog.jpg",
+  "dateOfBirth": "2021-07-09"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be049"
   },
-  {
-    "petID": 20,
-    "name": "Toby",
-    "age": 3,
-    "breed": "Poodle",
-    "animal": "Dog",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/toby.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 9,
+  "name": "Daisy",
+  "age": 2,
+  "breed": "Shih Tzu",
+  "animal": "Dog",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://i.redd.it/63rahralrhlc1.jpeg",
+  "dateOfBirth": "2022-07-04"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be04a"
   },
-  {
-    "petID": 21,
-    "name": "Nala",
-    "age": 4,
-    "breed": "African Grey Parrot",
-    "animal": "Bird",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/nala.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 10,
+  "name": "Jasper",
+  "age": 3,
+  "breed": "Chinchilla",
+  "animal": "Rodent",
+  "conditions": [
+    "Dental Issues"
+  ],
+  "picture": "https://external-preview.redd.it/E8-qSLUjpEghlZeOFZ6eDuiOiKu1eMWg3B5yUTmqseA.jpg?width=640&crop=smart&auto=webp&s=34eaba68560dd70db28daf11c76e359f8aa766b6",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be04b"
   },
-  {
-    "petID": 22,
-    "name": "Frank",
-    "age": 2,
-    "breed": "Iguana",
-    "animal": "Reptile",
-    "conditions": ["Metabolic Bone Disease"],
-    "picture": "https://example.com/images/frank.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 11,
+  "name": "Sadie",
+  "age": 5,
+  "breed": "Boxer",
+  "animal": "Dog",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://www.petlandflorida.com/wp-content/uploads/2020/02/Petland_Florida_Boxer.jpg",
+  "dateOfBirth": "2022-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be04c"
   },
-  {
-    "petID": 23,
-    "name": "Spike",
-    "age": 5,
-    "breed": "Bearded Dragon",
-    "animal": "Reptile",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/spike2.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 12,
+  "name": "Lola",
+  "age": 3,
+  "breed": "Dalmatian",
+  "animal": "Dog",
+  "conditions": [
+    "Epilepsy"
+  ],
+  "picture": "https://res.cloudinary.com/lancaster-puppies-laravel/image/upload/v1732030895/default/ouj6ahq7rskh8yurrud9.jpg",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be04d"
   },
-  {
-    "petID": 24,
-    "name": "Luna",
-    "age": 3,
-    "breed": "Tortoiseshell",
-    "animal": "Cat",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/luna2.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 13,
+  "name": "Oliver",
+  "age": 6,
+  "breed": "Ragdoll",
+  "animal": "Cat",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://www.thesprucepets.com/thmb/rMSmR5p-x-eNp3s8qGsTmVKb12M=/1080x0/filters:no_upscale():strip_icc()/56902602_414038916065155_4512174701024918698_n-95d7a6c3150e46be804a19a821abeceb.jpg",
+  "dateOfBirth": "2021-11-26"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be04e"
   },
-  {
-    "petID": 25,
-    "name": "Lily",
-    "age": 2,
-    "breed": "Golden Retriever",
-    "animal": "Dog",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/lily.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 14,
+  "name": "Maggie",
+  "age": 2,
+  "breed": "Cocker Spaniel",
+  "animal": "Dog",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJypAUOPaiwttZBH3UiEdeHumsCU7F8q-NJA&s",
+  "dateOfBirth": "2021-12-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be04f"
   },
-  {
-    "petID": 26,
-    "name": "Zoe",
-    "age": 4,
-    "breed": "Pygmy Goat",
-    "animal": "Goat",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/zoe2.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 15,
+  "name": "Gizmo",
+  "age": 1,
+  "breed": "Guinea Pig",
+  "animal": "Rodent",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://ontariospca.ca/wp-content/uploads/2024/01/Muskoka-guinea-pig-1200x1005.jpg",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be050"
   },
-  {
-    "petID": 27,
-    "name": "Ollie",
-    "age": 6,
-    "breed": "Bearded Dragon",
-    "animal": "Reptile",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/ollie.jpg",
-	"dateOfBirth": "2021-11-16"
+  "petID": 16,
+  "name": "Cleo",
+  "age": 8,
+  "breed": "Egyptian Mau",
+  "animal": "Cat",
+  "conditions": [
+    "Kidney Disease"
+  ],
+  "picture": "https://s3.animalia.bio/pets/animals/photos/full/1x1/zv9wMYnZJRYno1mYrv720VsaIBEztFhUsXWKCSMM.webp?id=18553f85918c1654acf2bc568b1fcac0",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be051"
   },
-  {
-    "petID": 28,
-    "name": "Chester",
-    "age": 3,
-    "breed": "Chinchilla",
-    "animal": "Rodent",
-    "conditions": ["Healthy"],
-    "picture": "https://example.com/images/chester.jpg",
-	"dateOfBirth": "2021-11-16"
-  }
-]
+  "petID": 17,
+  "name": "Milo",
+  "age": 4,
+  "breed": "Siberian Husky",
+  "animal": "Dog",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://www.zigly.com/media/mageplaza/blog/post/s/i/siberian_husky_2_.png",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be052"
+  },
+  "petID": 18,
+  "name": "Princess",
+  "age": 5,
+  "breed": "Bengal",
+  "animal": "Cat",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://www.healthypawspetinsurance.com/blog/wp-content/uploads/Bengal_640x420.jpg",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be053"
+  },
+  "petID": 19,
+  "name": "Barney",
+  "age": 4,
+  "breed": "Rabbit",
+  "animal": "Rabbit",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://www.welcomewildlife.com/wp-content/uploads/2015/02/Eastern-Cottontail-E-Laura-Wolf-Flickr-CC-BY-2.0-scaled.jpg",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be054"
+  },
+  "petID": 20,
+  "name": "Toby",
+  "age": 3,
+  "breed": "Poodle",
+  "animal": "Dog",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQxCh1JlYiN8NeqRdBp_f3ZGuDQhBJfITttw&s",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be055"
+  },
+  "petID": 21,
+  "name": "Nala",
+  "age": 4,
+  "breed": "African Grey Parrot",
+  "animal": "Bird",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://imgs.mongabay.com/wp-content/uploads/sites/20/2015/12/03004938/1024px-Psittacus_erithacus_-perching_on_tray-8d.jpg",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be056"
+  },
+  "petID": 22,
+  "name": "Frank",
+  "age": 2,
+  "breed": "Iguana",
+  "animal": "Reptile",
+  "conditions": [
+    "Metabolic Bone Disease"
+  ],
+  "picture": "https://www.littlecrittersvet.com/sites/site-6683/images/0.jpg",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be058"
+  },
+  "petID": 24,
+  "name": "Luna",
+  "age": 3,
+  "breed": "Tortoiseshell",
+  "animal": "Cat",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://images.stockcake.com/public/a/0/9/a092d887-b18d-4226-8eeb-a2616f147b87_large/tortoiseshell-cat-outdoors-stockcake.jpg",
+  "dateOfBirth": "2021-11-16"
+},
+{
+  "_id": {
+    "$oid": "675709cafb5cc20e028be05a"
+  },
+  "petID": 26,
+  "name": "Zoe",
+  "age": 4,
+  "breed": "Pygmy Goat",
+  "animal": "Goat",
+  "conditions": [
+    "Healthy"
+  ],
+  "picture": "https://preview.redd.it/what-breed-are-these-goats-the-brown-one-i-thought-was-a-v0-s6ykgh6hxngd1.jpg?width=640&crop=smart&auto=webp&s=0caf1317572bb478fd4478c2e4c0eb4b151179f0",
+  "dateOfBirth": "2021-11-16"
+}]
