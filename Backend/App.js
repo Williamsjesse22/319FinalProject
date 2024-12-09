@@ -36,23 +36,51 @@ app.get('/listPets', async (req, res) => {
 	}
 });
 
-// GET a single pet by ID
-app.get('/:petId', async (req, res) => {
-	try {
-		const petId = req.params.petId;
-		console.log('Pet to find:', petId);
-		const db = await connectDB();
-		const pet = await db.collection('pet').findOne({ petId: petId });
-		if (!pet) {
-			res.status(404).send('Pet not found.');
-		} else {
-			res.status(200).send(pet);
-		}
-	} catch (err) {
-		console.error(err);
-		res.status(500).send('Error retrieving pet.');
-	}
+// GET pets by multiple fields
+app.get('/searchPet', async (req, res) => {
+  try {
+    const { name, breed, animal, age } = req.query; // Get query parameters
+    const filter = {}; // Initialize an empty filter object
+
+    // Dynamically add filters if the query parameter is provided
+    if (name) filter.name = { $regex: new RegExp(name, "i") }; // Case-insensitive search
+    if (breed) filter.breed = { $regex: new RegExp(breed, "i") };
+    if (animal) filter.animal = { $regex: new RegExp(animal, "i") };
+    if (age) filter.age = parseInt(age, 10);
+
+    const db = await connectDB(); // Connect to the database
+    const pets = await db.collection('petdoption').find(filter).toArray(); // Query with filters
+
+    if (pets.length > 0) {
+      res.status(200).json(pets);
+    } else {
+      res.status(404).send("No pets found matching the criteria.");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error retrieving pets.");
+  }
 });
+
+
+
+
+// app.get('/:petId', async(req, res) => {
+// 	try {
+// 		const petId = req.params.petId;
+// 		console.log('Pet to find:', petId);
+// 		const db = await connectDB();
+// 		const pet = await db.collection('pet').findOne({ petId: petId });
+// 		if (!pet) {
+// 			res.status(404).send('Pet not found.');
+// 		} else {
+// 			res.status(200).send(pet);
+// 		}
+// 	} catch (err) {
+// 		console.error(err);
+// 		res.status(500).send('Error retrieving pet.');
+// 	}
+// });
 
 // Start server
 const port = 8081;
