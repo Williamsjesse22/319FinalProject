@@ -3,8 +3,8 @@
 // Description: A React component to add a new contact with fields for name, phone number, message, and image upload.
 //-----------------------------------------------------------------------------------------------------------//
 
-import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from 'react';
 
 // Main Component for Adding a Contact
 const AddContact = ({ contacts, setContacts }) => {
