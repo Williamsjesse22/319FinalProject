@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 
 const SearchPet = () => {
   const [petId, setPetId] = useState("");
@@ -11,7 +11,7 @@ const SearchPet = () => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:3000/${petId}`);
+      const response = await fetch(`http://localhost:8081/${petId}`);
       if (!response.ok) throw new Error("Pet not found.");
       const data = await response.json();
       setPet(data);

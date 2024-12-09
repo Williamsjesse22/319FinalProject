@@ -15,7 +15,7 @@ const AddPet = ({ refreshPets }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/addPet", {
+      const response = await fetch("http://localhost:8081/addPet", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
