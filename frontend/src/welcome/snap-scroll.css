@@ -1,0 +1,38 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	scroll-snap-type: y mandatory;
+	overflow: auto; /* Allows scrolling for the sections */
+}
+
+.section {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	scroll-snap-align: start;
+	background-color: #ffffff; /* Default background for sections */
+}
+
+.section:nth-child(odd) {
+	background-color: #e0f7fa; /* Alternate section colors */
+}
+
+.section:nth-child(even) {
+	background-color: #fce4ec;
+}
+/* Example CSS for Sidebar */
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 200px;
+	background-color: #333;
+	color: #fff;
+	padding: 1rem;
+	z-index: 900; /* Below the welcome animation */
+}
