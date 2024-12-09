@@ -1,254 +1,282 @@
 [
 	{
-		"petID": 1,
-		"name": "Buddy",
-		"age": 3,
-		"breed": "Golden Retriever",
-		"animal": "Dog",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/buddy.jpg"
-	},
-	{
-		"petID": 2,
-		"name": "Mittens",
-		"age": 5,
-		"breed": "Siamese",
-		"animal": "Cat",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/mittens.jpg"
-	},
-	{
-		"petID": 3,
-		"name": "Charlie",
-		"age": 7,
-		"breed": "Labrador",
-		"animal": "Dog",
-		"conditions": ["Arthritis"],
-		"picture": "https://example.com/images/charlie.jpg"
-	},
-	{
-		"petID": 4,
-		"name": "Fluffy",
-		"age": 1,
-		"breed": "Angora Rabbit",
-		"animal": "Rabbit",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/fluffy.jpg"
-	},
-	{
-		"petID": 5,
-		"name": "Max",
-		"age": 4,
-		"breed": "German Shepherd",
-		"animal": "Dog",
-		"conditions": ["Hip Dysplasia"],
-		"picture": "https://example.com/images/max.jpg"
-	},
-	{
-		"petID": 6,
-		"name": "Zoe",
-		"age": 2,
-		"breed": "African Grey Parrot",
-		"animal": "Bird",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/zoe.jpg"
-	},
-	{
-		"petID": 7,
-		"name": "Spike",
-		"age": 5,
-		"breed": "Bearded Dragon",
-		"animal": "Reptile",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/spike.jpg"
-	},
-	{
-		"petID": 8,
-		"name": "Oscar",
-		"age": 3,
-		"breed": "Beagle",
-		"animal": "Dog",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/oscar.jpg"
-	},
-	{
-		"petID": 9,
-		"name": "Daisy",
-		"age": 2,
-		"breed": "Shih Tzu",
-		"animal": "Dog",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/daisy.jpg"
-	},
-	{
-		"petID": 10,
-		"name": "Jasper",
-		"age": 3,
-		"breed": "Chinchilla",
-		"animal": "Rodent",
-		"conditions": ["Dental Issues"],
-		"picture": "https://example.com/images/jasper.jpg"
-	},
-	{
-		"petID": 11,
-		"name": "Sadie",
-		"age": 5,
-		"breed": "Boxer",
-		"animal": "Dog",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/sadie.jpg"
-	},
-	{
-		"petID": 12,
-		"name": "Lola",
-		"age": 3,
-		"breed": "Dalmatian",
-		"animal": "Dog",
-		"conditions": ["Epilepsy"],
-		"picture": "https://example.com/images/lola.jpg"
-	},
-	{
-		"petID": 13,
-		"name": "Oliver",
-		"age": 6,
-		"breed": "Ragdoll",
-		"animal": "Cat",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/oliver.jpg"
-	},
-	{
-		"petID": 14,
-		"name": "Maggie",
-		"age": 2,
-		"breed": "Cocker Spaniel",
-		"animal": "Dog",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/maggie.jpg"
-	},
-	{
-		"petID": 15,
-		"name": "Gizmo",
-		"age": 1,
-		"breed": "Guinea Pig",
-		"animal": "Rodent",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/gizmo.jpg"
-	},
-	{
-		"petID": 16,
-		"name": "Cleo",
-		"age": 8,
-		"breed": "Egyptian Mau",
-		"animal": "Cat",
-		"conditions": ["Kidney Disease"],
-		"picture": "https://example.com/images/cleo.jpg"
-	},
-	{
-		"petID": 17,
-		"name": "Milo",
-		"age": 4,
-		"breed": "Siberian Husky",
-		"animal": "Dog",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/milo.jpg"
-	},
-	{
-		"petID": 18,
-		"name": "Princess",
-		"age": 5,
-		"breed": "Bengal",
-		"animal": "Cat",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/princess.jpg"
-	},
-	{
-		"petID": 19,
-		"name": "Barney",
-		"age": 4,
-		"breed": "Rabbit",
-		"animal": "Rabbit",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/barney.jpg"
-	},
-	{
-		"petID": 20,
-		"name": "Toby",
-		"age": 3,
-		"breed": "Poodle",
-		"animal": "Dog",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/toby.jpg"
-	},
-	{
-		"petID": 21,
-		"name": "Nala",
-		"age": 4,
-		"breed": "African Grey Parrot",
-		"animal": "Bird",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/nala.jpg"
-	},
-	{
-		"petID": 22,
-		"name": "Frank",
-		"age": 2,
-		"breed": "Iguana",
-		"animal": "Reptile",
-		"conditions": ["Metabolic Bone Disease"],
-		"picture": "https://example.com/images/frank.jpg"
-	},
-	{
-		"petID": 23,
-		"name": "Spike",
-		"age": 5,
-		"breed": "Bearded Dragon",
-		"animal": "Reptile",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/spike2.jpg"
-	},
-	{
-		"petID": 24,
-		"name": "Luna",
-		"age": 3,
-		"breed": "Tortoiseshell",
-		"animal": "Cat",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/luna2.jpg"
-	},
-	{
-		"petID": 25,
-		"name": "Lily",
-		"age": 2,
-		"breed": "Golden Retriever",
-		"animal": "Dog",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/lily.jpg"
-	},
-	{
-		"petID": 26,
-		"name": "Zoe",
-		"age": 4,
-		"breed": "Pygmy Goat",
-		"animal": "Goat",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/zoe2.jpg"
-	},
-	{
-		"petID": 27,
-		"name": "Ollie",
-		"age": 6,
-		"breed": "Bearded Dragon",
-		"animal": "Reptile",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/ollie.jpg"
-	},
-	{
-		"petID": 28,
-		"name": "Chester",
-		"age": 3,
-		"breed": "Chinchilla",
-		"animal": "Rodent",
-		"conditions": ["Healthy"],
-		"picture": "https://example.com/images/chester.jpg"
-	}
+        "petId": 1,
+        "name": "Buddy",
+        "age": 3,
+        "breed": "Golden Retriever",
+        "animal": "Dog",
+        "conditions": ["Healthy"],
+        "picture": "https://example.com/images/buddy.jpg",
+        "dateOfBirth": "2021-01-03"
+    },
+    {
+        "petId": 2,
+        "name": "Mittens",
+        "age": 5,
+        "breed": "Siamese",
+        "animal": "Cat",
+        "conditions": ["Healthy"],
+        "picture": "https://example.com/images/mittens.jpg",
+        "dateOfBirth": "2019-08-09"
+    },
+    {
+        "petId": 3,
+        "name": "Charlie",
+        "age": 7,
+        "breed": "Labrador",
+        "animal": "Dog",
+        "conditions": ["Arthritis"],
+        "picture": "https://example.com/images/charlie.jpg",
+        "dateOfBirth": "2017-09-20"
+    },
+    {
+        "petId": 4,
+        "name": "Fluffy",
+        "age": 1,
+        "breed": "Angora Rabbit",
+        "animal": "Rabbit",
+        "conditions": ["Healthy"],
+        "picture": "https://example.com/images/fluffy.jpg",
+        "dateOfBirth": "2023-02-01"
+    },
+    {
+        "petId": 5,
+        "name": "Max",
+        "age": 4,
+        "breed": "German Shepherd",
+        "animal": "Dog",
+        "conditions": ["Hip Dysplasia"],
+        "picture": "https://example.com/images/max.jpg",
+        "dateOfBirth": "2020-11-03"
+    },
+    {
+        "petID": 6,
+        "name": "Zoe",
+        "age": 2,
+        "breed": "African Grey Parrot",
+        "animal": "Bird",
+        "conditions": ["Healthy"],
+        "picture": "https://example.com/images/zoe.jpg",
+        "dateOfBirth": "2022-03-11"
+    },
+    {
+        "petID": 7,
+        "name": "Spike",
+        "age": 5,
+        "breed": "Bearded Dragon",
+        "animal": "Reptile",
+        "conditions": ["Healthy"],
+        "picture": "https://example.com/images/spike.jpg",
+        "dateOfBirth": "2019-05-21"
+    },
+    {
+        "petID": 8,
+        "name": "Oscar",
+        "age": 3,
+        "breed": "Beagle",
+        "animal": "Dog",
+        "conditions": ["Healthy"],
+        "picture": "https://example.com/images/oscar.jpg",
+        "dateOfBirth": "2021-07-09"
+    },
+    {
+        "petID": 9,
+        "name": "Daisy",
+        "age": 2,
+        "breed": "Shih Tzu",
+        "animal": "Dog",
+        "conditions": ["Healthy"],
+        "picture": "https://example.com/images/daisy.jpg",
+        "dateOfBirth": "2022-07-04"
+    },
+    {
+        "petID": 10,
+        "name": "Jasper",
+        "age": 3,
+        "breed": "Chinchilla",
+        "animal": "Rodent",
+        "conditions": ["Dental Issues"],
+        "picture": "https://example.com/images/jasper.jpg",
+        "dateOfBirth": "2021-11-16"
+    },
+  {
+    "petID": 11,
+    "name": "Sadie",
+    "age": 5,
+    "breed": "Boxer",
+    "animal": "Dog",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/sadie.jpg",
+	"dateOfBirth": "2022-11-16"
+  },
+  {
+    "petID": 12,
+    "name": "Lola",
+    "age": 3,
+    "breed": "Dalmatian",
+    "animal": "Dog",
+    "conditions": ["Epilepsy"],
+    "picture": "https://example.com/images/lola.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 13,
+    "name": "Oliver",
+    "age": 6,
+    "breed": "Ragdoll",
+    "animal": "Cat",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/oliver.jpg",
+	"dateOfBirth": "2021-11-26"
+  },
+  {
+    "petID": 14,
+    "name": "Maggie",
+    "age": 2,
+    "breed": "Cocker Spaniel",
+    "animal": "Dog",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/maggie.jpg",
+	"dateOfBirth": "2021-12-16"
+  },
+  {
+    "petID": 15,
+    "name": "Gizmo",
+    "age": 1,
+    "breed": "Guinea Pig",
+    "animal": "Rodent",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/gizmo.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 16,
+    "name": "Cleo",
+    "age": 8,
+    "breed": "Egyptian Mau",
+    "animal": "Cat",
+    "conditions": ["Kidney Disease"],
+    "picture": "https://example.com/images/cleo.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 17,
+    "name": "Milo",
+    "age": 4,
+    "breed": "Siberian Husky",
+    "animal": "Dog",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/milo.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 18,
+    "name": "Princess",
+    "age": 5,
+    "breed": "Bengal",
+    "animal": "Cat",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/princess.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 19,
+    "name": "Barney",
+    "age": 4,
+    "breed": "Rabbit",
+    "animal": "Rabbit",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/barney.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 20,
+    "name": "Toby",
+    "age": 3,
+    "breed": "Poodle",
+    "animal": "Dog",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/toby.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 21,
+    "name": "Nala",
+    "age": 4,
+    "breed": "African Grey Parrot",
+    "animal": "Bird",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/nala.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 22,
+    "name": "Frank",
+    "age": 2,
+    "breed": "Iguana",
+    "animal": "Reptile",
+    "conditions": ["Metabolic Bone Disease"],
+    "picture": "https://example.com/images/frank.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 23,
+    "name": "Spike",
+    "age": 5,
+    "breed": "Bearded Dragon",
+    "animal": "Reptile",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/spike2.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 24,
+    "name": "Luna",
+    "age": 3,
+    "breed": "Tortoiseshell",
+    "animal": "Cat",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/luna2.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 25,
+    "name": "Lily",
+    "age": 2,
+    "breed": "Golden Retriever",
+    "animal": "Dog",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/lily.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 26,
+    "name": "Zoe",
+    "age": 4,
+    "breed": "Pygmy Goat",
+    "animal": "Goat",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/zoe2.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 27,
+    "name": "Ollie",
+    "age": 6,
+    "breed": "Bearded Dragon",
+    "animal": "Reptile",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/ollie.jpg",
+	"dateOfBirth": "2021-11-16"
+  },
+  {
+    "petID": 28,
+    "name": "Chester",
+    "age": 3,
+    "breed": "Chinchilla",
+    "animal": "Rodent",
+    "conditions": ["Healthy"],
+    "picture": "https://example.com/images/chester.jpg",
+	"dateOfBirth": "2021-11-16"
+  }
 ]
