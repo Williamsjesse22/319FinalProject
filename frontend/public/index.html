@@ -1,77 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pet List</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <div class="container">
-      <h1>Pet List</h1>
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div id="col" class="row"></div>
-        </div>
-      </div>
-
-      <h2>Find a Pet by ID</h2>
-      <input id="petId" placeholder="Enter Pet ID" />
-      <button onclick="fetchOnePet()">Search</button>
-
-      <div id="pet-detail" class="mt-3"></div>
-    </div>
-
-    <script>
-      function fetchData() {
-        fetch("http://localhost:3000/listPets")
-          .then((response) => response.json())
-          .then((pets) => loadPets(pets))
-          .catch((error) => console.error("Error:", error));
-      }
-
-      function loadPets(pets) {
-        const petContainer = document.getElementById("col");
-        petContainer.innerHTML = "";
-        pets.forEach((pet) => {
-          petContainer.innerHTML += `
-               <div class="col-md-4">
-                 <div class="card mb-4 shadow-sm">
-                   <img src="${pet.url}" class="card-img-top" alt="${pet.name}">
-                   <div class="card-body">
-                     <p class="card-text"><strong>${pet.name}</strong> (${pet.animal})</p>
-                   </div>
-                 </div>
-               </div>`;
-        });
-      }
-
-      function fetchOnePet() {
-        const petId = document.getElementById("petId").value;
-        fetch(`http://localhost:3000/${petId}`)
-          .then((response) => {
-            if (!response.ok) throw new Error("Pet not found");
-            return response.json();
-          })
-          .then((pet) => {
-            document.getElementById("pet-detail").innerHTML = `
-                 <div class="card mb-4 shadow-sm">
-                   <img src="${pet.url}" class="card-img-top" alt="${pet.name}">
-                   <div class="card-body">
-                     <p class="card-text"><strong>${pet.name}</strong> (${pet.animal})</p>
-                   </div>
-                 </div>`;
-          })
-          .catch((error) => {
-            document.getElementById("pet-detail").innerText = error.message;
-          });
-      }
-
-      fetchData();
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pet List</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div id="root"></div>
+		<script src="index.js"></script>
+		<!-- Ensure React renders the App here -->
+	</body>
 </html>

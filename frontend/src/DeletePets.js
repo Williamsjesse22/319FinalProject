@@ -10,7 +10,7 @@ const DeletePet = ({ refreshPets }) => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:3000/${petId}`, {
+      const response = await fetch(`http://localhost:8081/${petId}`, {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Failed to delete pet.");
