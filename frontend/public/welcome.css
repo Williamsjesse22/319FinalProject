@@ -87,16 +87,6 @@ body {
   height: 100vh;
   background-color: #eb4747;
 }
-/*
- * text
- */
-/* .text {
-  position: absolute;
-  width: 40px;
-  line-height: 40px;
-  opacity: 0;
-  overflow: hidden;
-} */
 
 .text {
   position: absolute;
