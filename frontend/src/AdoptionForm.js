@@ -2,33 +2,37 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const AdoptionForm = () => {
-  const { petId } = useParams(); // Get petId from the URL
-  const [pet, setPet] = useState(null); // State for storing pet data
+  const { petId } = useParams();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    address: "",
     message: "",
   });
-
+  const [pet, setPet] = useState(null); // State for the pet's information
   const navigate = useNavigate();
 
-  // Fetch the specific pet's information
   useEffect(() => {
+    // Fetch pet information based on petId
     const fetchPet = async () => {
       try {
-        const response = await fetch(`http://localhost:8081/searchPet?petId=${petId}`);
+        const response = await fetch(`http://localhost:8081/searchPet`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ petId }),
+        });
+
         if (!response.ok) throw new Error("Failed to fetch pet information.");
         const data = await response.json();
-        setPet(data); // Update the pet state with fetched data
-      } catch (error) {
-        console.error("Error fetching pet information:", error);
-        alert("Unable to load pet information.");
+        setPet(data); // Set the pet information
+      } catch (err) {
+        alert("Error fetching pet information: " + err.message);
       }
     };
 
-    fetchPet();
+    if (petId) fetchPet();
   }, [petId]);
 
   const handleChange = (e) => {
@@ -47,23 +51,25 @@ const AdoptionForm = () => {
         body: JSON.stringify({ ...formData, petId }),
       });
 
-      if (!response.ok) throw new Error("Failed to submit adoption request.");
+      if (!response.ok) throw new Error("Failed to submit request.");
       alert("Adoption request submitted successfully!");
-      navigate("/listPets"); // Redirect to the pets list after submission
+      navigate("/confetti"); // Redirect to the confetti page
     } catch (err) {
       alert("Error submitting request: " + err.message);
     }
   };
 
   return (
-    <div className="container mt-4">
-      <h2 className="text-center">Adoption Form</h2>
+    <div className="container">
+      <h2 className="text-center mt-4">Adoption Form</h2>
+
+      {/* Grid Layout for Form and Pet Information */}
       <div className="row">
-        {/* Form Section */}
-        <div className="col-md-8">
+        {/* Left Column - Adoption Form */}
+        <div className="col-md-6">
           <form onSubmit={handleSubmit}>
-            <div className="mb-3" style={{ textAlign: "left" }}>
-              <label className="form-label" >Name</label>
+            <div className="mb-3">
+              <label className="form-label">Name</label>
               <input
                 type="text"
                 name="name"
@@ -73,7 +79,7 @@ const AdoptionForm = () => {
                 required
               />
             </div>
-            <div className="mb-3" style={{ textAlign: "left" }}>
+            <div className="mb-3">
               <label className="form-label">Phone Number</label>
               <input
                 type="text"
@@ -84,7 +90,7 @@ const AdoptionForm = () => {
                 required
               />
             </div>
-            <div className="mb-3" style={{ textAlign: "left" }}>
+            <div className="mb-3">
               <label className="form-label">Email</label>
               <input
                 type="email"
@@ -95,17 +101,7 @@ const AdoptionForm = () => {
                 required
               />
             </div>
-            <div className="mb-3" style={{ textAlign: "left" }}>
-              <label className="form-label">Address</label>
-              <textarea
-                name="address"
-                className="form-control"
-                value={formData.address}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="mb-3" style={{ textAlign: "left" }}>
+            <div className="mb-3">
               <label className="form-label">Message</label>
               <textarea
                 name="message"
@@ -114,18 +110,18 @@ const AdoptionForm = () => {
                 onChange={handleChange}
               />
             </div>
-            <button type="submit" className="btn btn-primary" style={{ textAlign: "center"}} >
+            <button type="submit" className="btn btn-primary">
               Submit
             </button>
           </form>
         </div>
 
-        {/* Pet Information Section */}
-        <div className="col-md-4">
+        {/* Right Column - Pet Information */}
+        <div className="col-md-6">
           {pet ? (
             <div className="card">
               <img
-                src={pet.picture} // Ensure your backend sends a valid picture URL
+                src={pet.picture}
                 alt={pet.name}
                 className="card-img-top"
                 style={{

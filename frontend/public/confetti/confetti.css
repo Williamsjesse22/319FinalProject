@@ -1,0 +1,23 @@
+/* Congrats message styling */
+.congrats-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ff6347; /* Tomato red */
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Pulse animation for the congrats text */
+  @keyframes pulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+  

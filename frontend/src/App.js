@@ -5,6 +5,7 @@ import DeletePet from "./DeletePets";
 import Pets from "./Pets";
 import SearchPet from "./SearchPets";
 import AdoptionForm from "./AdoptionForm";
+import ConfettiPage from "./ConfettiPage"; // Create this new component
 import UpdatePet from "./UpdatePet";
 import Sidebar from "./Sidebar";
 import Welcome from "./welcome/welcome"; // Animation component
@@ -28,6 +29,7 @@ const App = () => {
                 <Route path="/listPets" element={<Pets />} />
                 <Route path="/searchPet" element={<SearchPet />} />
                 <Route path="/adoptionForm/:petId" element={<AdoptionForm />} />
+				<Route path="/confetti" element={<ConfettiPage />} /> {/* Confetti Page */}
                 <Route path="/addPet" element={<AddPet />} />
                 <Route path="/updatePet" element={<UpdatePet />} />
                 <Route path="/deletePet" element={<DeletePet />} />
