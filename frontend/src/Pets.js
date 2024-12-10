@@ -1,8 +1,15 @@
 // Pets.js
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Pets = () => {
   const [pets, setPets] = useState([]); // State to store the list of pets
+  const navigate = useNavigate();
+
+  const handleAdopt = (petId) => {
+    navigate(`/adoptionForm/${petId}`);
+  };
 
   // Fetch pets from the backend when the component mounts
   useEffect(() => {
@@ -52,7 +59,7 @@ const Pets = () => {
                       </div>
                       <button
                         className="btn btn-primary"
-                        //onClick={() => handleAdopt(pet.petId)}
+                        onClick={() => handleAdopt(pet.petId)}
                       >
                         Adopt
                       </button>
