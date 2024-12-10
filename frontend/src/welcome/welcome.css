@@ -9,8 +9,9 @@
  */
 html,
 body {
-  height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: auto;
+  overflow: auto;
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -36,8 +37,8 @@ body {
 
 #welcome-container {
   position: relative;
-  height: 100vh;
-  overflow: hidden; /* Prevent scrolling while animation is running */
+  height: auto; /* Remove 100vh if present */
+  overflow: auto; /* Allow scrolling */
 }
 
 .section {

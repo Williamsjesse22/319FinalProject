@@ -10,20 +10,21 @@ const DeletePet = ({ refreshPets }) => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:8081/${petId}`, {
+      const response = await fetch(`http://localhost:8081/deletePet/${petId}`, {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Failed to delete pet.");
       alert("Pet deleted successfully!");
-      refreshPets();
+      setPetId(""); // Reset the input field
+      if (refreshPets) refreshPets(); // Refresh the list of pets if provided
     } catch (err) {
       alert("Error deleting pet: " + err.message);
     }
   };
 
   return (
-    <div className="container">
-      <h2 className="text-center mt-4">Delete Pet</h2>
+    <div className="container mt-4">
+      <h2 className="text-center">Delete Pet</h2>
       <div className="input-group mb-3">
         <input
           type="text"
