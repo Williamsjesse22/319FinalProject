@@ -48,6 +48,26 @@ body {
   transition: opacity 1s, transform 1s; /* Smooth transition for the appearance */
 }
 
+.app-container {
+  display: flex; /* Enables horizontal layout */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+}
+
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #f8f9fa; /* Light background */
+  height: 100%; /* Full height */
+}
+
+.content {
+  flex-grow: 1; /* Expand to occupy remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #ffffff; /* White background for content */
+}
+
+
 #about-us, #our-services, #contact-us {
   margin-top: 100vh; /* Start sections below the fold */
 }

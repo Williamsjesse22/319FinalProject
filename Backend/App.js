@@ -198,6 +198,25 @@ app.delete("/deletePet/:petId", async (req, res) => {
 });
 
 
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+
+  const users = [
+    { username: "admin", password: "adminPassword123", role: "admin" },
+    { username: "user", password: "userPassword123", role: "user" },
+  ];
+
+  const user = users.find(
+    (u) => u.username === username && u.password === password
+  );
+
+  if (!user) {
+    return res.status(401).json({ error: "Invalid username or password" });
+  }
+
+  res.status(200).json({ role: user.role });
+});
+
 
 
 
