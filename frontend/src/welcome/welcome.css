@@ -1,18 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-/**
- * get random number.
- * @param {number} min - min number.
- * @param {number} max - max number.
- */
-/*
- * variable
- */
-html,
-body {
-  height: auto;
-  width: auto;
-  overflow: auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@700&family=Great+Vibes&display=swap');
 
 /* General Styles */
 html {
@@ -22,7 +9,23 @@ html {
 body {
 	margin: 0;
 	font-family: 'Montserrat', sans-serif;
-	overflow-x: visible; /* Allow horizontal overflow if needed */
+}
+
+/* Header and Footer Styles */
+header,
+footer {
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+	font-size: 2em;
+	font: 700 4em Oxanium, sans-serif;
+	text-align: center;
+	text-shadow: 1px 1px 3px;
+}
+
+/* Main Section Content */
+section {
+	height: 500vh;
 }
 
 /* Image Scaler and Overlay Text */
@@ -44,29 +47,40 @@ body {
 
 .overlay-text {
 	position: absolute;
-	top: -160%;
-	left: -360%;
+	top: -150%;
+	left: -340%;
 	width: 80%;
 	color: goldenrod;
-	font-size: 15rem;
+	font-size: 13rem;
 	font-weight: bold;
 	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .overlay-text .subtext {
   position: absolute;
-  top: 300%;                    /* Position near the bottom of the image */
-  left: 490%;                     /* Center horizontally */
+  bottom: -295%;                    /* Position near the bottom of the image */
+  left:375%;                     /* Center horizontally */
   transform: translateX(-50%);   /* Center the div precisely */
-  width: 1200%;                    /* Span 60% of the image width */
+  width: 6000%;                    /* Span 60% of the image width */
   color: goldenrod;
-  font-size: 8.5rem;             /* Slightly smaller text */
+  font-size: 6.5rem;             /* Slightly smaller text */
   text-align: center;
   font-style: italic;
   opacity: 0.9;                  /* Slight transparency */
   white-space: nowrap;           /* Prevent text from wrapping to new lines */
   overflow: hidden;              /* Ensure overflow is hidden if needed */
   text-overflow: ellipsis;       /* Optional: Show ellipsis if text overflows */
+}
+
+
+/* Show text when the scaler is visible */
+.scaler.show .overlay-text {
+	opacity: 1;
+}
+
+/* Hide text when the scaler starts to animate out */
+.scaler.hide .overlay-text {
+	opacity: 0;
 }
 
 /*
