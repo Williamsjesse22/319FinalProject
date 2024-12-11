@@ -55,43 +55,6 @@ body {
 
 .overlay-text .subtext {
   position: absolute;
-<<<<<<< Updated upstream
-  top: 50%;
-  left: 50%;
-  height: 0;
-  width: 0;
-  transform: translate(-20px, -20px);
-}
-/* Add to your welcome.css */
-
-#welcome-container {
-  position: relative;
-  height: auto; /* Remove 100vh if present */
-  overflow: auto; /* Allow scrolling */
-}
-
-.section {
-  display: none; /* Hide sections initially */
-  opacity: 0; /* Make them invisible */
-  transform: translateY(100px); /* Start off below the viewport */
-  transition: opacity 1s, transform 1s; /* Smooth transition for the appearance */
-}
-
-#about-us, #our-services, #contact-us {
-  margin-top: 100vh; /* Start sections below the fold */
-}
-
-.show-section {
-  display: block; /* Make the section visible */
-  opacity: 1; /* Fade in the section */
-  transform: translateY(0); /* Bring it into view */
-}
-
-/* Optional: Make sure sections have enough padding or margin to be spaced out correctly */
-.section {
-  padding: 20px;
-  margin-bottom: 50px;
-=======
   top: 300%;                    /* Position near the bottom of the image */
   left: 490%;                     /* Center horizontally */
   transform: translateX(-50%);   /* Center the div precisely */
@@ -104,7 +67,6 @@ body {
   white-space: nowrap;           /* Prevent text from wrapping to new lines */
   overflow: hidden;              /* Ensure overflow is hidden if needed */
   text-overflow: ellipsis;       /* Optional: Show ellipsis if text overflows */
->>>>>>> Stashed changes
 }
 
 /*
