@@ -14,7 +14,7 @@ body {
   overflow: auto;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: #fff;
   position: relative;
   overflow: hidden;
@@ -67,8 +67,116 @@ body {
   background-color: #ffffff; /* White background for content */
 }
 
+/* later addition */
+/* Add a gradient background animation */
+@keyframes gradient-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-#about-us, #our-services, #contact-us {
+body {
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb);
+  background-size: 600% 600%;
+  animation: gradient-bg 10s ease infinite;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.decoration {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  animation: float 4s ease-in-out infinite;
+}
+
+.decoration1 {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.decoration2 {
+  top: 30%;
+  left: 50%;
+  animation-delay: 1s;
+}
+
+.decoration3 {
+  top: 70%;
+  left: 70%;
+  animation-delay: 2s;
+}
+
+/* Add hover effects for interactive elements */
+button:hover,
+a:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+button {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #feb47b, #ff7e5f);
+}
+
+/* Animated welcome text */
+.welcome-title {
+  font-size: 3rem;
+  font-weight: bold;
+  background: -webkit-linear-gradient(#ff6a95, #fbc2eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
+      0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 30px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
+      0 0 10px rgba(255, 255, 255, 0.3);
+  }
+}
+
+
+#about-us,
+#our-services,
+#contact-us {
   margin-top: 100vh; /* Start sections below the fold */
 }
 
@@ -158,10 +266,9 @@ body {
   gap: 5px; /* Adjust spacing between letters */
 }
 
-
 .text::after {
   z-index: -1;
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   top: 0;
@@ -172,7 +279,8 @@ body {
 .text0 {
   left: -140px;
   top: 0;
-  animation: text-animation0 1s ease-in-out 1s 1 normal forwards, text2-animation0 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation0 1s ease-in-out 1s 1 normal forwards,
+    text2-animation0 2s ease-in-out 5s 1 normal forwards;
 }
 .text0::after {
   animation: text-after-animation0 2s ease-in-out 3s 1 normal forwards;
@@ -180,7 +288,8 @@ body {
 .text1 {
   left: -100px;
   top: 0;
-  animation: text-animation1 1s ease-in-out 1.2s 1 normal forwards, text2-animation1 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation1 1s ease-in-out 1.2s 1 normal forwards,
+    text2-animation1 2s ease-in-out 5s 1 normal forwards;
 }
 .text1::after {
   animation: text-after-animation1 2s ease-in-out 3s 1 normal forwards;
@@ -188,7 +297,8 @@ body {
 .text2 {
   left: -60px;
   top: 0;
-  animation: text-animation2 1s ease-in-out 1.4s 1 normal forwards, text2-animation2 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation2 1s ease-in-out 1.4s 1 normal forwards,
+    text2-animation2 2s ease-in-out 5s 1 normal forwards;
 }
 .text2::after {
   animation: text-after-animation2 2s ease-in-out 3s 1 normal forwards;
@@ -196,7 +306,8 @@ body {
 .text3 {
   left: -20px;
   top: 0;
-  animation: text-animation3 1s ease-in-out 1.6s 1 normal forwards, text2-animation3 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation3 1s ease-in-out 1.6s 1 normal forwards,
+    text2-animation3 2s ease-in-out 5s 1 normal forwards;
 }
 .text3::after {
   animation: text-after-animation3 2s ease-in-out 3s 1 normal forwards;
@@ -204,7 +315,8 @@ body {
 .text4 {
   left: 20px;
   top: 0;
-  animation: text-animation4 1s ease-in-out 1.8s 1 normal forwards, text2-animation4 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation4 1s ease-in-out 1.8s 1 normal forwards,
+    text2-animation4 2s ease-in-out 5s 1 normal forwards;
 }
 .text4::after {
   animation: text-after-animation4 2s ease-in-out 3s 1 normal forwards;
@@ -212,7 +324,8 @@ body {
 .text5 {
   left: 60px;
   top: 0;
-  animation: text-animation5 1s ease-in-out 2s 1 normal forwards, text2-animation5 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation5 1s ease-in-out 2s 1 normal forwards,
+    text2-animation5 2s ease-in-out 5s 1 normal forwards;
 }
 .text5::after {
   animation: text-after-animation5 2s ease-in-out 3s 1 normal forwards;
@@ -220,7 +333,8 @@ body {
 .text6 {
   left: 100px;
   top: 0;
-  animation: text-animation6 1s ease-in-out 2.2s 1 normal forwards, text2-animation6 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation6 1s ease-in-out 2.2s 1 normal forwards,
+    text2-animation6 2s ease-in-out 5s 1 normal forwards;
 }
 .text6::after {
   animation: text-after-animation6 2s ease-in-out 3s 1 normal forwards;
@@ -228,7 +342,8 @@ body {
 .text7 {
   left: 140px;
   top: 0;
-  animation: text-animation7 1s ease-in-out 2.4s 1 normal forwards, text2-animation7 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation7 1s ease-in-out 2.4s 1 normal forwards,
+    text2-animation7 2s ease-in-out 5s 1 normal forwards;
 }
 .text7::after {
   animation: text-after-animation7 2s ease-in-out 3s 1 normal forwards;
@@ -236,7 +351,8 @@ body {
 .text8 {
   left: 180px;
   top: 0;
-  animation: text-animation8 1s ease-in-out 2.6s 1 normal forwards, text2-animation8 2s ease-in-out 5s 1 normal forwards;
+  animation: text-animation8 1s ease-in-out 2.6s 1 normal forwards,
+    text2-animation8 2s ease-in-out 5s 1 normal forwards;
 }
 .text8::after {
   animation: text-after-animation8 2s ease-in-out 3s 1 normal forwards;

@@ -16,10 +16,13 @@ const SearchPets = () => {
 
   const fetchPetsByFilters = async () => {
     try {
-      const queryParams = new URLSearchParams(
-        Object.entries(filters).filter(([_, value]) => value.trim() !== "")
-      ).toString();
-      const response = await fetch(`http://localhost:8081/searchPet?${queryParams}`);
+      const response = await fetch("http://localhost:8081/searchPet", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(filters), // Send filters as JSON in the request body
+      });
       if (!response.ok) throw new Error("No pets found.");
       const data = await response.json();
       setPets(data);
@@ -27,6 +30,7 @@ const SearchPets = () => {
       alert("Error fetching pets: " + err.message);
     }
   };
+  
 
   return (
     <div>

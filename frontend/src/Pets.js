@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const Pets = () => {
   const [pets, setPets] = useState([]); // State to store the list of pets
   const navigate = useNavigate();
