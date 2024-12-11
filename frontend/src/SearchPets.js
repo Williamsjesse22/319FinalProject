@@ -16,12 +16,15 @@ const SearchPet = () => {
   };
 
   const fetchPetsByFilters = async () => {
-    const queryParams = new URLSearchParams(
-      Object.entries(filters).filter(([_, value]) => value.trim() !== "")
-    ).toString(); // Construct query string from non-empty fields
-
     try {
-      const response = await fetch(`http://localhost:8081/searchPet?${queryParams}`);
+      const response = await fetch("http://localhost:8081/searchPet", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(filters), // Send filters as JSON in the request body
+      });
+  
       if (!response.ok) throw new Error("No pets found.");
       const data = await response.json();
       setPets(data);
@@ -29,6 +32,7 @@ const SearchPet = () => {
       alert("Error fetching pets: " + err.message);
     }
   };
+  
 
   return (
     <div className="container">

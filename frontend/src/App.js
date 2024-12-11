@@ -1,47 +1,73 @@
 import React, { useState } from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./Sidebar";
+import Login from "./Login";
 import AddPet from "./AddPet";
 import DeletePet from "./DeletePets";
+import UpdatePet from "./UpdatePet";
 import Pets from "./Pets";
 import SearchPet from "./SearchPets";
-import AdoptionForm from "./AdoptionForm";
-import ConfettiPage from "./ConfettiPage"; // Create this new component
-import UpdatePet from "./UpdatePet";
-import Sidebar from "./Sidebar";
-import Welcome from "./welcome/welcome"; // Animation component
+import Welcome from "./welcome/welcome";
 import "./welcome/welcome.css";
+import AdoptionForm from "./AdoptionForm";
+import ConfettiPage from "./ConfettiPage";
+//import "./App.css";
 
 const App = () => {
-  const [animationComplete, setAnimationComplete] = useState(false);
-
-  const handleAnimationEnd = () => {
-    setAnimationComplete(true);
+    const [userRole, setUserRole] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [showWelcome, setShowWelcome] = useState(true);
+  
+    const handleLogout = () => {
+      setUserRole(null);
+      setIsLoggedIn(false);
+    };
+  
+    const handleAnimationEnd = () => {
+      setShowWelcome(false);
+    };
+  
+    return (
+      <Router>
+        <div className="app-container">
+          {showWelcome ? (
+            <Welcome onAnimationEnd={handleAnimationEnd} />
+          ) : (
+            <>
+              <Sidebar
+                userRole={userRole}
+                isLoggedIn={isLoggedIn}
+                handleLogout={handleLogout}
+              />
+              <div className="content">
+                <Routes>
+                  <Route
+                    path="/login"
+                    element={
+                      <Login
+                        setUserRole={setUserRole}
+                        setIsLoggedIn={setIsLoggedIn}
+                      />
+                    }
+                  />
+                  <Route path="/listPets" element={<Pets />} />
+                  <Route path="/searchPet" element={<SearchPet />} />
+				  <Route path="/adoptionForm/:petId" element={<AdoptionForm />} />
+				  <Route path="/confetti" element={<ConfettiPage />} />
+                  {userRole === "admin" && (
+                    <>
+                      <Route path="/addPet" element={<AddPet />} />
+                      <Route path="/updatePet" element={<UpdatePet />} />
+                      <Route path="/deletePet" element={<DeletePet />} />
+                    </>
+                  )}
+                </Routes>
+              </div>
+            </>
+          )}
+        </div>
+      </Router>
+    );
   };
-
-  return (
-    <Router>
-      <div className="app-container">
-        {animationComplete ? (
-          <div className="d-flex">
-            <Sidebar />
-            <div className="content flex-grow-1 p-3">
-              <Routes>
-                <Route path="/listPets" element={<Pets />} />
-                <Route path="/searchPet" element={<SearchPet />} />
-                <Route path="/adoptionForm/:petId" element={<AdoptionForm />} />
-				<Route path="/confetti" element={<ConfettiPage />} /> {/* Confetti Page */}
-                <Route path="/addPet" element={<AddPet />} />
-                <Route path="/updatePet" element={<UpdatePet />} />
-                <Route path="/deletePet" element={<DeletePet />} />
-              </Routes>
-            </div>
-          </div>
-        ) : (
-          <Welcome onAnimationEnd={handleAnimationEnd} />
-        )}
-      </div>
-    </Router>
-  );
-};
-
-export default App;
+  
+  export default App;
