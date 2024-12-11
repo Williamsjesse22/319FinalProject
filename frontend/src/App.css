@@ -22,16 +22,23 @@ body {
 }
 
 .app-container {
-	display: flex;
-	height: auto; /* Remove 100vh */
-	overflow: auto; /* Allow scrolling */
-  }
-  
-  .content {
-	flex-grow: 1;
-	overflow-y: auto; /* Ensure the content area is scrollable */
-  }
-  
+  display: flex; /* Enables horizontal layout */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+}
+
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #f8f9fa; /* Light background */
+  height: 100%; /* Full height */
+}
+
+.content {
+  flex-grow: 1; /* Expand to occupy remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #ffffff; /* White background for content */
+}
 
 .album py-5 bg-light {
   height: auto;
@@ -39,11 +46,12 @@ body {
 }
 
 /* Sidebar Styling */
-.sidebar {
-  width: 250px; /* Adjust sidebar width */
-  background-color: #f5f5f5;
-  border-right: 1px solid #ddd;
-}
+/* .sidebar {
+  background-color: #f8f9fa; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+} */
 
 /* Scroll Indicator */
 .scroll-indicator {
