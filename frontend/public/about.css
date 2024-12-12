@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* Global resets */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: #e4c7bf;
+}
+
+.marquee-text h1 {
+	font-size: 5rem;
+	align-items: center;
+	justify-content: center;
+	color:goldenrod;
+}
+
+.marquee-text p {
+	font-size: 2rem;
+	align-items: center;
+	justify-content: center;
+	color:white;
+}
+
+.transition-start {
+	background: linear-gradient(#e4c7bf 0%, black 100%);
+	width: 100%;
+	height: 300px; /* Adjust as needed */
+}
+
+.background,
+.transition-end,
+.snap-container > section {
+	height: 100vh;
+}
+
+.background {
+	background: black;
+	position: relative;
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.marquee-section {
+	position: relative;
+	top: 200px; /* Adjust this if needed, or remove and use padding/margins */
+}
+
+.marquee-text {
+	max-width: 1000px;
+	padding: 0 15px;
+	margin: 0 auto 50px;
+	font-size: 1.5rem;
+	color: white;
+}
+
+.marquee-wrapper {
+	width: 100%;
+	position: absolute;
+	box-sizing: border-box;
+	color: inherit;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+}
+
+.marquee {
+	display: flex;
+	gap: 30px;
+	overflow: hidden;
+	/* If you want to ensure it fits nicely, set a max-height or adjust images */
+}
+
+.marquee-item {
+	position: relative;
+	width: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	overflow: hidden;
+}
+
+.member {
+	width: 100%;
+}
+
+.member-link {
+	display: block;
+}
+
+.member-img-wrapper {
+	margin: 0;
+}
+
+.member-img {
+	display: block;
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	filter: grayscale(100%);
+	transition: filter 0.3s;
+}
+
+.member-details {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.35);
+	transform: translateY(100%);
+	transition: transform 0.3s;
+	color: white;
+}
+
+.member-title {
+	margin: 0 0 5px;
+}
+
+.member-subtitle {
+	margin: 0;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.member-link:hover .member-details {
+	transform: none;
+}
+
+.member-link:hover .member-img {
+	filter: grayscale(0);
+}
+
+.marquee-arrow {
+	position: absolute;
+	bottom: -60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	background: #dc2f02;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.marquee-arrow.arrow-prev {
+	left: calc(50% - 50px);
+}
+
+.marquee-arrow.arrow-next {
+	right: calc(50% - 50px);
+}
+
+@media (min-width: 850px) {
+	.marquee-item {
+		width: 500px;
+	}
+
+	.member-img {
+		height: 500px;
+	}
+
+	.member-title {
+		font-size: 1.6em;
+	}
+
+	.marquee-arrow {
+		top: 50%;
+		transform: translateY(-50%);
+		width: 70px;
+		height: 70px;
+	}
+
+	.marquee-arrow.arrow-prev {
+		left: 40px;
+	}
+
+	.marquee-arrow.arrow-next {
+		right: 40px;
+	}
+}
+
+.transition-end {
+	background: linear-gradient(black 0%, #e4c7bf 100%);
+	width: 100%;
+	height: 300px; /* Adjust this height as needed */
+}

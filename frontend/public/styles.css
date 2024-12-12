@@ -453,8 +453,7 @@
 		display: grid;
 		place-items: center;
 		min-height: 100vh;
-		font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons',
-			'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+		font-family: 'Sour Gummy';
 	}
 
 	.content-wrap::before {
@@ -514,4 +513,17 @@
 
 [data-stick='true'] div.tp-dfwv {
 	position: fixed;
+}
+
+.page-footer h1{
+	color: goldenrod;
+	font-size: 12rem;
+}
+
+.page-footer h2{
+
+}
+
+.page-footer p{
+
 }

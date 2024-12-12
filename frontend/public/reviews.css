@@ -1,0 +1,272 @@
+/* Reviews Section Title */
+.reviews-section h2 {
+	text-align: center;
+	font-size: 10em;
+	color: goldenrod;
+	margin-bottom: 40px;
+}
+
+.reviews-section .words {
+    text-align: center;
+    color: goldenrod;
+}
+
+/* Background Box for the Reviews Section */
+.reviews-section {
+	background-color: #E5D9C7; /* Dark blue, almost black */
+	border-radius: 20px; /* Rounded corners */
+	padding: 40px 20px; /* Space inside the box */
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for 3D effect */
+    height: 102vh;
+    width: 100%;
+}
+
+/* Adjusting the Container to Fit Within the Background Box */
+.reviews-section .container {
+	padding: 20px 0; /* Add space inside the container */
+}
+
+/* Optional: Add a Little Margin to the Title for Better Spacing */
+.reviews-section h2 {
+	margin-top: 0;
+	color: goldenrod; /* Light color for contrast */
+}
+
+/* Container for Reviews */
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px; /* Adds space between the cards */
+	justify-content: space-between; /* Ensure cards are spaced evenly */
+	position: relative;
+}
+
+/* Each Card Column: Three Columns Layout */
+.card-column {
+	width: calc(33.333% - 20px); /* Three cards per row with a gap */
+	box-sizing: border-box;
+	padding: 4%;
+	position: relative;
+}
+
+/* Stagger Effect: Alternate Margin Tops for Rows */
+.card-column:nth-child(odd) {
+	margin-top: 0;
+}
+
+.card-column:nth-child(even) {
+	margin-top: 50px; /* Stagger every other card by 50px */
+}
+
+/* Card Styling */
+.card {
+	width: 100%;
+	max-width: 340px;
+	margin: 0 auto;
+	position: relative;
+	color: #fff;
+	cursor: pointer;
+	margin-bottom: 60px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling: Hanging Off Top and Left */
+.card > img {
+	position: absolute;
+	top: -20%; /* Hang off the top */
+	left: -15%; /* Hang off the left */
+	width: 110%; /* Slightly larger to extend beyond the card's right edge */
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	border-radius: 4px;
+}
+
+/* Thin White Border Around the Card */
+.border {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 6px;
+	border: 1px solid #fff;
+	opacity: 0.5;
+	left: -6px;
+	top: -6px;
+}
+
+/* Card Heading */
+.card h1 {
+	position: relative;
+	padding: 190px 0px 100px 10px;
+	width: 90%;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+/* Expanding Cover */
+.cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #eb5160;
+	z-index: 100;
+	transform-origin: 50% 50%;
+	width: 0px;
+	height: 0px;
+}
+
+/* Open Content Overlay */
+.open-content {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 110;
+	opacity: 0;
+	pointer-events: none;
+	overflow: auto;
+	background: transparent;
+}
+
+/* Open Content Image */
+.open-content img {
+	position: relative;
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 20px;
+	z-index: 5;
+}
+
+/* Open Content Text Box */
+.open-content .text {
+	background: #fff;
+	padding: 60px 5% 5% 5%;
+	width: 80%;
+	margin: 0 auto;
+	position: absolute;
+	top: 100%; /* Start just below the image */
+	left: 50%;
+	transform: translate(
+		-50%,
+		-50px
+	); /* Center horizontally and move up slightly */
+	bottom: auto;
+	min-height: calc(100% - 500px);
+	max-height: 60vh;
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+
+/* Open Content Text Styling */
+.open-content .text h1,
+.open-content .text p {
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #333; /* For better readability */
+}
+
+/* Close Button */
+.close-content {
+	display: block;
+	justify-content: flex-start;
+	right: 12px;
+	top: 12px;
+	width: 30px;
+	height: 30px;
+	text-decoration: none;
+}
+
+.close-content span {
+	background: #222;
+	width: 30px;
+	height: 6px;
+	display: block;
+	position: absolute;
+	top: 14px;
+}
+
+.x-1 {
+	transform: rotate(45deg);
+}
+
+.x-2 {
+	transform: rotate(-45deg);
+}
+
+/* Card Transitions */
+.card {
+	transition: opacity 200ms linear 320ms, transform 200ms ease-out 320ms;
+}
+
+.border {
+	transition: opacity 200ms linear, transform 200ms ease-out;
+}
+
+.card img {
+	transition: opacity 200ms linear 0ms, transform 200ms ease-in 0ms;
+}
+
+.card h1 {
+	transform: translate3d(20%, 0px, 0px);
+	transition: opacity 200ms linear 120ms, transform 200ms ease-in 120ms;
+}
+
+.card.clicked img {
+	transform: translate3d(0px, -40px, 0px);
+	opacity: 0;
+}
+
+.card.clicked .border {
+	opacity: 0;
+	transform: scale(1.3);
+}
+
+.card.out,
+.card.out img {
+	transform: translate3d(0px, -40px, 0px);
+	opacity: 0;
+}
+
+.card.out h1,
+.card.clicked h1 {
+	transform: translate3d(20%, -40px, 0px);
+	opacity: 0;
+}
+
+/* Cover Transition */
+.cover {
+	transition: transform 300ms ease-in-out;
+}
+
+/* Open Content Transition */
+.open-content {
+	transition: opacity 200ms linear 0ms;
+}
+
+.open-content.open {
+	opacity: 1;
+	pointer-events: all;
+	transition-delay: 1000ms;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 600px) {
+	.card-column {
+		width: 100%; /* Stack cards vertically on smaller screens */
+	}
+
+	.open-content img {
+		margin-top: 40px;
+	}
+
+	.open-content .text {
+		margin-top: -20%;
+		padding: 50% 5% 5% 5%;
+	}
+}
+
+.transition-end {
+	background: linear-gradient(#E5D9C7 0%, #e4c7bf 100%);
+	width: 100%;
+	height: 300px; /* Adjust this height as needed */
+}
