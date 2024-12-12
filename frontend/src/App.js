@@ -1,73 +1,97 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./Sidebar";
-import Login from "./Login";
-import AddPet from "./AddPet";
-import DeletePet from "./DeletePets";
-import UpdatePet from "./UpdatePet";
-import Pets from "./Pets";
-import SearchPet from "./SearchPets";
-import Welcome from "./welcome/welcome";
-import "./welcome/welcome.css";
-import AdoptionForm from "./AdoptionForm";
-import ConfettiPage from "./ConfettiPage";
-//import "./App.css";
+import React, { useState } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/NavbarTemp';
+import Sidebar from './Sidebar';
+import './styles/welcome.css';
+
+// Component Imports
+import AddPet from './AddPet';
+import AdoptionForm from './AdoptionForm';
+import ConfettiPage from './ConfettiPage';
+import DeletePet from './DeletePets';
+import Login from './Login';
+import Pets from './Pets';
+import SearchPet from './SearchPets';
+import UpdatePet from './UpdatePet';
 
 const App = () => {
-  const [userRole, setUserRole] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(true);
+	const [userRole, setUserRole] = useState(null);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [showWelcome, setShowWelcome] = useState(true);
 
-  const handleLogout = () => {
-    setUserRole(null);
-    setIsLoggedIn(false);
-  };
+	const handleLogout = () => {
+		setUserRole(null);
+		setIsLoggedIn(false);
+	};
 
-  const handleAnimationEnd = () => {
-    setShowWelcome(false);
-  };
+	return (
+		<>
+			<Navbar
+				userRole={userRole}
+				isLoggedIn={isLoggedIn}
+				handleLogout={handleLogout}
+			/>
+			<div className="app-container">
+				<>
+					<Sidebar
+						userRole={userRole}
+						isLoggedIn={isLoggedIn}
+						handleLogout={handleLogout}
+					/>
+					<div className="content">
+						<Routes>
+							{/* Public Routes */}
+							<Route path="/listPets" element={<Pets />} />
+							<Route path="/searchPet" element={<SearchPet />} />
+							<Route
+								path="/adoptionForm/:petId"
+								element={<AdoptionForm />}
+							/>
+							<Route
+								path="/confetti"
+								element={<ConfettiPage />}
+							/>
 
-  return (
-    <Router>
-      <div className="app-container">
-        {showWelcome ? (
-          <Welcome onAnimationEnd={handleAnimationEnd} />
-        ) : (
-          <>
-            <Sidebar
-              userRole={userRole}
-              isLoggedIn={isLoggedIn}
-              handleLogout={handleLogout}
-            />
-            <div className="content">
-              <Routes>
-                <Route path="/listPets" element={<Pets />} />
-                <Route path="/searchPet" element={<SearchPet />} />
-                <Route path="/adoptionForm/:petId" element={<AdoptionForm />} />
-                <Route path="/confetti" element={<ConfettiPage />} />
-                {userRole === "admin" && (
-                  <>
-                    <Route path="/addPet" element={<AddPet />} />
-                    <Route path="/updatePet" element={<UpdatePet />} />
-                    <Route path="/deletePet" element={<DeletePet />} />
-                  </>
-                )}
-                <Route
-                  path="/login"
-                  element={
-                    <Login
-                      setUserRole={setUserRole}
-                      setIsLoggedIn={setIsLoggedIn}
-                    />
-                  }
-                />
-              </Routes>
-            </div>
-          </>
-        )}
-      </div>
-    </Router>
-  );
+							<Route
+								path="/login"
+								element={
+									<Login
+										setUserRole={setUserRole}
+										setIsLoggedIn={setIsLoggedIn}
+									/>
+								}
+							/>
+							<Route path="*" element={<Navigate to="/" />} />
+
+							{/* Admin Routes */}
+							{userRole === 'admin' && (
+								<>
+									<Route
+										path="/addPet"
+										element={<AddPet />}
+									/>
+									<Route
+										path="/updatePet"
+										element={<UpdatePet />}
+									/>
+									<Route
+										path="/deletePet"
+										element={<DeletePet />}
+									/>
+								</>
+							)}
+
+							{/* Fallback Route */}
+							<Route
+								path="*"
+								element={<div>Page Not Found</div>}
+							/>
+						</Routes>
+					</div>
+				</>
+			</div>
+		</>
+	);
 };
 
 export default App;

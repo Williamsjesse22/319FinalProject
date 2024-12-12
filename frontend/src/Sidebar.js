@@ -57,31 +57,7 @@ const Sidebar = ({ userRole, isLoggedIn, handleLogout }) => {
           </li>
         </ul>
       </div>
-      {/* <style jsx>{`
-        .sidebar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: ${isSidebarOpen ? "200px" : "50px"};
-          height: 100%;
-          background-color: #333;
-          color: white;
-          overflow: hidden;
-          transition: width 0.3s ease;
-        }
-
-        .hamburger {
-          font-size: 1.5rem;
-          text-align: center;
-          cursor: pointer;
-          padding: 1rem;
-        }
-
-        .nav-link {
-          display: block;
-          padding: 10px;
-        }
-      `}</style> */}
+      {}
     </div>
   );
 };
