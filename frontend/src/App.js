@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/NavbarTemp';
-import Sidebar from './Sidebar';
 import './styles/welcome.css';
 
 // Component Imports
@@ -17,7 +16,6 @@ import UpdatePet from './UpdatePet';
 const App = () => {
 	const [userRole, setUserRole] = useState(null);
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
-	const [showWelcome, setShowWelcome] = useState(true);
 
 	const handleLogout = () => {
 		setUserRole(null);
@@ -33,11 +31,6 @@ const App = () => {
 			/>
 			<div className="app-container">
 				<>
-					<Sidebar
-						userRole={userRole}
-						isLoggedIn={isLoggedIn}
-						handleLogout={handleLogout}
-					/>
 					<div className="content">
 						<Routes>
 							{/* Public Routes */}
