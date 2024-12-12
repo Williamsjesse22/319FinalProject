@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AdoptionForm = () => {
   const { petId } = useParams();
@@ -53,7 +53,7 @@ const AdoptionForm = () => {
 
       if (!response.ok) throw new Error("Failed to submit request.");
       alert("Adoption request submitted successfully!");
-      navigate("/confetti"); // Redirect to the confetti page
+      navigate('/confetti'); // Redirect to the confetti page
     } catch (err) {
       alert("Error submitting request: " + err.message);
     }

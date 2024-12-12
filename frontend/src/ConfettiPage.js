@@ -1,30 +1,34 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { launchConfetti, stopConfetti } from './confetti'; // Ensure you import stopConfetti
+import './styles/confetti.css';
 
 const ConfettiPage = () => {
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate("/listPets"); // Redirect to the Pet List page after 3 seconds
-    }, 7000);
+	useEffect(() => {
+		// Start the confetti animation
+		launchConfetti(7000); // Launch confetti for 7 seconds
 
-    return () => clearTimeout(timer); // Cleanup the timer on unmount
-  }, [navigate]);
+		// Clean up the confetti animation when the component unmounts
+		return () => stopConfetti();
+	}, []);
 
-  return (
-    <div>
-      <iframe
-        src="./confetti/confetti.html"
-        style={{
-          width: "100%",
-          height: "100vh",
-          border: "none",
-        }}
-        title="Confetti Animation"
-      ></iframe>
-    </div>
-  );
+	useEffect(() => {
+		// Redirect to the '/listPets' route after 7 seconds
+		const timer = setTimeout(() => {
+			navigate('/listPets');
+		}, 7000);
+
+		// Clear the timer if the component unmounts before 7 seconds
+		return () => clearTimeout(timer);
+	}, [navigate]);
+
+	return (
+		<div className="confetti-page">
+			<h1>Congratulations!</h1>
+		</div>
+	);
 };
 
 export default ConfettiPage;
