@@ -168,7 +168,7 @@
 /* Close Button */
 .close-content {
 	display: block;
-	position: absolute;
+	justify-content: flex-start;
 	right: 12px;
 	top: 12px;
 	width: 30px;

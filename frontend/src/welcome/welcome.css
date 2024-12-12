@@ -96,6 +96,15 @@ section {
 }
 
 /* later addition */
+
+.sidebar {
+  width: 50px; /* Default collapsed state */
+  transition: width 0.3s;
+}
+.sidebar.open {
+  width: 200px; /* Expanded state */
+}
+
 /* Add a gradient background animation */
 @keyframes gradient-bg {
 	0% {

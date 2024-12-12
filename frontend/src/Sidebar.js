@@ -1,55 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ userRole, isLoggedIn, handleLogout }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="sidebar">
-      <h2 className="text-center">Navigation</h2>
-      <ul className="nav flex-column">
-        <li className="nav-item">
-          <Link to="/listPets" className="nav-link text-dark">
-            View All Pets
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/searchPet" className="nav-link text-dark">
-            Search Pet
-          </Link>
-        </li>
-        {userRole === "admin" && (
-          <>
-            <li className="nav-item">
-              <Link to="/addPet" className="nav-link text-dark">
-                Add Pet
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/updatePet" className="nav-link text-dark">
-                Update Pet
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/deletePet" className="nav-link text-dark">
-                Delete Pet
-              </Link>
-            </li>
-          </>
-        )}
-        <li className="nav-item">
-          {isLoggedIn ? (
-            <button
-              className="btn btn-danger w-100 mt-3"
-              onClick={handleLogout}
-            >
-              Log Out
-            </button>
-          ) : (
-            <Link to="/login" className="nav-link text-dark">
-              Login
+    <div>
+      <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+        <ul className="nav flex-column">
+          <li className="nav-item">
+            <Link to="/listPets" className="nav-link text-dark">
+              View All Pets
             </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/searchPet" className="nav-link text-dark">
+              Search Pet
+            </Link>
+          </li>
+          {userRole === "admin" && (
+            <>
+              <li className="nav-item">
+                <Link to="/addPet" className="nav-link text-dark">
+                  Add Pet
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/updatePet" className="nav-link text-dark">
+                  Update Pet
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/deletePet" className="nav-link text-dark">
+                  Delete Pet
+                </Link>
+              </li>
+            </>
           )}
-        </li>
-      </ul>
+          <li className="nav-item">
+            {isLoggedIn ? (
+              <button
+                className="btn btn-danger w-100 mt-3"
+                onClick={handleLogout}
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link to="/login" className="nav-link text-dark">
+                Login
+              </Link>
+            )}
+          </li>
+        </ul>
+      </div>
+      {/* <style jsx>{`
+        .sidebar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: ${isSidebarOpen ? "200px" : "50px"};
+          height: 100%;
+          background-color: #333;
+          color: white;
+          overflow: hidden;
+          transition: width 0.3s ease;
+        }
+
+        .hamburger {
+          font-size: 1.5rem;
+          text-align: center;
+          cursor: pointer;
+          padding: 1rem;
+        }
+
+        .nav-link {
+          display: block;
+          padding: 10px;
+        }
+      `}</style> */}
     </div>
   );
 };

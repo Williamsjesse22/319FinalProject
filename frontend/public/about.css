@@ -186,8 +186,8 @@ body {
 	}
 }
 
-.transition-end-about {
-	background: linear-gradient(black 0%, #E5D9C7 100%);
+.transition-end {
+	background: linear-gradient(black 0%, #e4c7bf 100%);
 	width: 100%;
 	height: 300px; /* Adjust this height as needed */
 }
