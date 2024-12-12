@@ -169,7 +169,7 @@ function resize() {
 }
 
 var paragraphText =
-	'<p>Somebody once told me the world is gonna roll me...</p>'; // You can put your review text here
+	'<p>Me and my pet are so happy together! Thank you Petdoption!</p>'; // You can put your review text here
 
 // Function to generate a random hex color
 function getRandomColor() {

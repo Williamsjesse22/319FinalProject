@@ -514,3 +514,16 @@
 [data-stick='true'] div.tp-dfwv {
 	position: fixed;
 }
+
+.page-footer h1{
+	color: goldenrod;
+	font-size: 12rem;
+}
+
+.page-footer h2{
+
+}
+
+.page-footer p{
+
+}
