@@ -11,6 +11,7 @@ import Welcome from "./welcome/welcome";
 import "./welcome/welcome.css";
 import AdoptionForm from "./AdoptionForm";
 import ConfettiPage from "./ConfettiPage";
+import Navbar from './navbar/navbar.js';
 //import "./App.css";
 
 const App = () => {
@@ -28,7 +29,9 @@ const App = () => {
   };
 
   return (
+	
     <Router>
+		<Navbar userRole={userRole} />
       <div className="app-container">
         {showWelcome ? (
           <Welcome onAnimationEnd={handleAnimationEnd} />
@@ -43,8 +46,6 @@ const App = () => {
               <Routes>
                 <Route path="/listPets" element={<Pets />} />
                 <Route path="/searchPet" element={<SearchPet />} />
-                <Route path="/adoptionForm/:petId" element={<AdoptionForm />} />
-                <Route path="/confetti" element={<ConfettiPage />} />
                 {userRole === "admin" && (
                   <>
                     <Route path="/addPet" element={<AddPet />} />

@@ -1,0 +1,117 @@
+/* Navigation Button */
+#open-nav {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+  transition: translate 0.5s ease-in-out; /* Smooth movement */
+  overflow: hidden;
+}
+
+.login-btn,
+.logout-btn {
+  background-color: #756b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  background-color: #5c4d4d;
+}
+
+
+/* Adjust menu button position when dialog is open */
+body:has(.push-x[open]) #open-nav {
+  translate: calc(min(300px, 80vw) * -1) 0;
+}
+
+/* Disable scrolling when dialog is open */
+/* body.nav-open {
+    overflow: hidden;
+  } */
+  
+
+/* Dialog Box for Navigation */
+dialog.push-x {
+  inset: 0 0 0 auto; /* Extend to the top */
+  inline-size: min(300px, 80vw); /* Sidebar width */
+  block-size: 100dvh; /* Full height */
+  background: #f0f0f0; /* Light grey background for expanded window */
+  border: none;
+  padding: 0; /* Ensure it spans full width/height */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Ensure no scrolling is required for content visibility */
+  transition: translate 0.5s ease-in-out; /* Smooth sliding */
+  overflow: hidden;
+}
+
+dialog.push-x ul.nav-list {
+  list-style: none;
+  padding: 1rem; /* Add padding to avoid content sticking to edges */
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  top: -70rem;
+  position: relative;
+  height: 100;
+  padding-left: 60px;
+}
+
+
+dialog.push-x ul.nav-list li {
+  margin: 1rem 0;
+}
+
+dialog.push-x ul.nav-list a {
+  align-items: flex-start;
+  text-decoration: none;
+  color: #333;
+  font-size: 2rem;
+}
+
+/* Close Button Styles */
+dialog.push-x header {
+  display: flex;
+  justify-content: end; /* Align close button to the left */
+  align-items: flex-start; /* Center button vertically */
+  padding: 1rem;
+  margin-right: 0;
+  position: relative;
+}
+
+dialog.push-x header button {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background: none;
+  border: none;
+  width: 40px; /* Circle dimensions */
+  height: 40px;
+  border-radius: 50%; /* Make it circular */
+  background-color: #756b6b; /* Dark background for visibility */
+  color: white; /* Ensure X is visible */
+  font-size: 1.2rem; /* Adjust X size for visibility */
+  cursor: pointer;
+}
+
+/* Dialog open/close behavior */
+dialog.push-x[open] {
+  display: block;
+  opacity: 1;
+}
+
+dialog.push-x:not([open]) {
+  display: none;
+}
