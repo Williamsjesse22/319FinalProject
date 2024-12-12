@@ -25,7 +25,11 @@ const ConfettiPage = () => {
 	}, [navigate]);
 
 	return (
-		<div className="confetti-page">
+		<div className="confetti-page" style={{display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+            textAlign: 'center',}}>
 			<h1>Congratulations!</h1>
 		</div>
 	);
