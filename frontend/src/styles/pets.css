@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f4f9;
+  color: #333;
+}
+/*--grauconejo13 - Vanessa victorino --*/
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.card {
+  background: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  position: relative;
+}
+
+
+.card:hover {
+  transform: scale(1.1) translateY(-10px) translateX(-5px) translateX(5px) translateZ(-20px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* Ensures the hovered card is on top */
+}
+
+.symbol {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+
+.card:not(:hover) {
+  /* filter: blur(5px); */
+  transform: scale(0.9);
+  z-index: 0;
+}
+
+/* Blur out other cards when one is hovered */
+/* .card-container .card:hover ~ .card {
+  filter: blur(5px);
+  transform: scale(0.95);
+  z-index: 1;
+} */
+
+/* Ensure non-hovered cards are displayed clearly by default */
+/* .card-container .card:not(:hover) {
+  filter: none;
+} */

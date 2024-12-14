@@ -1,6 +1,8 @@
 // Pets.js
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./styles/pets.css";
+
 
 const Pets = () => {
   const [pets, setPets] = useState([]); // State to store the list of pets
@@ -33,7 +35,7 @@ const Pets = () => {
         <div className="container">
           <div className="row">
             {pets.map((pet) => (
-              <div key={pet.petId} className="col-md-4">
+              <div key={pet.petId} className="col-md-4 card-container">
                 <div className="card mb-4 shadow-sm">
                   <img
                     src={pet.picture} // Assuming 'pet.url' contains the pet image URL

@@ -60,7 +60,7 @@ const AdoptionForm = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{width: "1000px"}}>
       <h2 className="text-center mt-4">Adoption Form</h2>
 
       {/* Grid Layout for Form and Pet Information */}
@@ -119,7 +119,7 @@ const AdoptionForm = () => {
         {/* Right Column - Pet Information */}
         <div className="col-md-6">
           {pet ? (
-            <div className="card">
+            <div className="card" style={{width: "400px"}}>
               <img
                 src={pet.picture}
                 alt={pet.name}
