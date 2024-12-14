@@ -3,6 +3,64 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/pets.css';
 
+// Parallax Tilt Effect Class
+class parallaxTiltEffect {
+	constructor({ element, tiltEffect }) {
+		this.element = element;
+		this.container = this.element.querySelector('.card');
+		this.size = [this.container.offsetWidth, this.container.offsetHeight];
+		[this.w, this.h] = this.size;
+
+		this.tiltEffect = tiltEffect;
+
+		this.handleMouseMove = this.handleMouseMove.bind(this);
+		this.handleMouseEnter = this.handleMouseEnter.bind(this);
+		this.handleMouseLeave = this.handleMouseLeave.bind(this);
+		this.defaultStates = this.defaultStates.bind(this);
+		this.setProperty = this.setProperty.bind(this);
+
+		this.init();
+	}
+
+	handleMouseMove(event) {
+		const rect = this.container.getBoundingClientRect();
+		const offsetX = event.clientX - rect.left;
+		const offsetY = event.clientY - rect.top;
+		const centerX = rect.width / 2;
+		const centerY = rect.height / 2;
+
+		const X = -(offsetX - centerX) / 10;
+		const Y = (offsetY - centerY) / 10;
+
+		this.setProperty('--rY', X.toFixed(2));
+		this.setProperty('--rX', Y.toFixed(2));
+	}
+
+	handleMouseEnter() {
+		this.container.classList.add('card--active');
+	}
+
+	handleMouseLeave() {
+		this.defaultStates();
+	}
+
+	defaultStates() {
+		this.container.classList.remove('card--active');
+		this.setProperty('--rY', 0);
+		this.setProperty('--rX', 0);
+	}
+
+	setProperty(p, v) {
+		this.container.style.setProperty(p, v);
+	}
+
+	init() {
+		this.element.addEventListener('mousemove', this.handleMouseMove);
+		this.element.addEventListener('mouseenter', this.handleMouseEnter);
+		this.element.addEventListener('mouseleave', this.handleMouseLeave);
+	}
+}
+
 const Pets = () => {
 	const [pets, setPets] = useState([]); // State to store the list of pets
 	const navigate = useNavigate();
@@ -27,27 +85,16 @@ const Pets = () => {
 		fetchPets();
 	}, []);
 
-	// Handle mouse move to apply tilt effect
-	const handleMouseMove = (event) => {
-		const card = event.currentTarget;
-		const rect = card.getBoundingClientRect();
-		const offsetX = event.clientX - rect.left;
-		const offsetY = event.clientY - rect.top;
-		const centerX = rect.width / 2;
-		const centerY = rect.height / 2;
-
-		const X = -(offsetX - centerX) / 10;
-		const Y = (offsetY - centerY) / 10;
-
-		// Apply the transform directly
-		card.style.transform = `rotateX(${Y}deg) rotateY(${X}deg)`;
-	};
-
-	// Handle mouse leave to reset tilt effect
-	const handleMouseLeave = (event) => {
-		const card = event.currentTarget;
-		card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-	};
+	useEffect(() => {
+		// Apply the parallax tilt effect to each card container
+		const cardContainers = document.querySelectorAll('.card-container');
+		cardContainers.forEach((container) => {
+			new parallaxTiltEffect({
+				element: container,
+				tiltEffect: 'normal',
+			});
+		});
+	}, [pets]);
 
 	return (
 		<div className="container">
@@ -60,9 +107,7 @@ const Pets = () => {
 								key={pet.petId}
 								className="col-md-4 card-container">
 								<div
-									className="card mb-4 shadow-sm"
-									onMouseMove={handleMouseMove}
-									onMouseLeave={handleMouseLeave}>
+									className="card mb-4 shadow-sm">
 									<div>
 										{' '}
 										<img
