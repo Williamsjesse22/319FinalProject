@@ -1,6 +1,8 @@
 // Pets.js
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './styles/App.css';
+import './styles/welcome.css';
 
 const Pets = () => {
   const [pets, setPets] = useState([]); // State to store the list of pets

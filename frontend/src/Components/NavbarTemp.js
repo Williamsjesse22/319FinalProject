@@ -84,11 +84,11 @@ const Navbar = ({ userRole, isLoggedIn, handleLogout }) => {
 									Log Out
 								</button>
 							) : (
-								<li>
+								<ol>
 									<Link to="../login" onClick={closeNav}>
 										Login
 									</Link>
-								</li>
+								</ol>
 							)}
 						</li>
 					</ul>
