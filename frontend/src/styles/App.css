@@ -22,6 +22,7 @@ General Layout .app-container {
 	align-items: center;
 	max-width: 100%;
 	overflow-x: hidden;
+  background-color: '#e4c7bf';
 }
 
 html,
