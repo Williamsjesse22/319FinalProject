@@ -1,47 +1,45 @@
-/* Reviews Section Title */
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 .reviews-section h2 {
 	text-align: center;
 	font-size: 10em;
 	color: goldenrod;
 	margin-bottom: 40px;
+	font-family: 'Sour Gummy';
 }
 
 .reviews-section .words {
-    text-align: center;
-    color: goldenrod;
+	text-align: center;
+	color: goldenrod;
+	font-family: 'Sour Gummy';
 }
 
-/* Background Box for the Reviews Section */
 .reviews-section {
-	background-color: #E5D9C7; /* Dark blue, almost black */
-	border-radius: 20px; /* Rounded corners */
+	background-color: #e5d9c7;
 	padding: 40px 20px; /* Space inside the box */
-	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for 3D effect */
-    height: 102vh;
-    width: 100%;
+	height: 102vh;
+	width: 100vw;
 }
 
-/* Adjusting the Container to Fit Within the Background Box */
 .reviews-section .container {
 	padding: 20px 0; /* Add space inside the container */
 }
 
-/* Optional: Add a Little Margin to the Title for Better Spacing */
-.reviews-section h2 {
-	margin-top: 0;
-	color: goldenrod; /* Light color for contrast */
-}
-
-/* Container for Reviews */
 .container {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px; /* Adds space between the cards */
 	justify-content: space-between; /* Ensure cards are spaced evenly */
 	position: relative;
+	width: 100vw;
 }
 
-/* Each Card Column: Three Columns Layout */
 .card-column {
 	width: calc(33.333% - 20px); /* Three cards per row with a gap */
 	box-sizing: border-box;
@@ -49,7 +47,6 @@
 	position: relative;
 }
 
-/* Stagger Effect: Alternate Margin Tops for Rows */
 .card-column:nth-child(odd) {
 	margin-top: 0;
 }
@@ -58,19 +55,16 @@
 	margin-top: 50px; /* Stagger every other card by 50px */
 }
 
-/* Card Styling */
 .card {
 	width: 100%;
 	max-width: 340px;
 	margin: 0 auto;
 	position: relative;
-	color: #fff;
 	cursor: pointer;
 	margin-bottom: 60px;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Styling: Hanging Off Top and Left */
 .card > img {
 	position: absolute;
 	top: -20%; /* Hang off the top */
@@ -81,7 +75,6 @@
 	border-radius: 4px;
 }
 
-/* Thin White Border Around the Card */
 .border {
 	position: absolute;
 	width: 100%;
@@ -93,24 +86,24 @@
 	top: -6px;
 }
 
-/* Card Heading */
 .card h1 {
 	position: relative;
 	padding: 190px 0px 100px 10px;
 	width: 90%;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	font-family: 'Sour Gummy';
 }
 
-/* Expanding Cover */
 .cover {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: #eb5160;
+	background: #eb5160; /* Default color */
 	z-index: 100;
 	transform-origin: 50% 50%;
-	width: 0px;
-	height: 0px;
+	width: 0;
+	height: 0;
+	transition: transform 300ms ease-in-out;
 }
 
 /* Open Content Overlay */
@@ -123,11 +116,18 @@
 	z-index: 110;
 	opacity: 0;
 	pointer-events: none;
-	overflow: auto;
 	background: transparent;
+	transition: opacity 200ms linear 0ms;
+	overflow-y: auto;
 }
 
-/* Open Content Image */
+.open-content.open {
+	opacity: 1;
+	pointer-events: all;
+	transition-delay: 1000ms;
+}
+
+/* Ensure image and text are centered */
 .open-content img {
 	position: relative;
 	width: 90%;
@@ -136,7 +136,6 @@
 	z-index: 5;
 }
 
-/* Open Content Text Box */
 .open-content .text {
 	background: #fff;
 	padding: 60px 5% 5% 5%;
@@ -265,8 +264,8 @@
 	}
 }
 
-.transition-end {
-	background: linear-gradient(#E5D9C7 0%, #e4c7bf 100%);
-	width: 100%;
+.transition-end-reviews {
+	background: linear-gradient(#e5d9c7 0%, #e4c7bf 100%);
+	width: 100vw;
 	height: 300px; /* Adjust this height as needed */
 }

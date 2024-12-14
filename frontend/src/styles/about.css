@@ -1,35 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 /* Global resets */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	margin: 0;
 	padding: 0;
 	background: #e4c7bf;
+	font-family: 'Sour Gummy';
 }
 
 .marquee-text h1 {
 	font-size: 5rem;
 	align-items: center;
 	justify-content: center;
-	color:goldenrod;
+	color: goldenrod;
+	font-family: 'Sour Gummy';
 }
 
 .marquee-text p {
 	font-size: 2rem;
 	align-items: center;
 	justify-content: center;
-	color:white;
+	color: white;
+	font-family: 'Sour Gummy';
 }
 
-.transition-start {
+.transition-start-about {
 	background: linear-gradient(#e4c7bf 0%, black 100%);
-	width: 100%;
+	width: 100vw;
 	height: 300px; /* Adjust as needed */
 }
 
-.background,
-.transition-end,
 .snap-container > section {
 	height: 100vh;
 }
@@ -37,9 +44,10 @@ body {
 .background {
 	background: black;
 	position: relative;
-	color: white;
 	display: flex;
 	flex-direction: column;
+	width: 100vw;
+	min-height: 100vh;
 }
 
 .marquee-section {
@@ -53,6 +61,7 @@ body {
 	margin: 0 auto 50px;
 	font-size: 1.5rem;
 	color: white;
+	font-family: 'Sour Gummy';
 }
 
 .marquee-wrapper {
@@ -118,12 +127,14 @@ body {
 
 .member-title {
 	margin: 0 0 5px;
+	font-family: 'Sour Gummy';
 }
 
 .member-subtitle {
 	margin: 0;
 	text-transform: uppercase;
 	color: rgba(255, 255, 255, 0.5);
+	font-family: 'Sour Gummy';
 }
 
 .member-link:hover .member-details {
@@ -187,7 +198,7 @@ body {
 }
 
 .transition-end {
-	background: linear-gradient(black 0%, #e4c7bf 100%);
-	width: 100%;
+	background: linear-gradient(black 0%, #e5d9c7 100%);
+	width: 100vw;
 	height: 300px; /* Adjust this height as needed */
 }

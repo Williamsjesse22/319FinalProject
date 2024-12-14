@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Landing from './Components/landing.js';
 import Navbar from './Components/NavbarTemp';
-import './styles/welcome.css';
 
 // Component Imports
 import AddPet from './AddPet';
@@ -54,7 +54,12 @@ const App = () => {
 									/>
 								}
 							/>
-							<Route path="*" element={<Navigate to="/" />} />
+							<Route
+								path="/"
+								element={
+									<Landing />
+								}	
+							/>
 
 							{/* Admin Routes */}
 							{userRole === 'admin' && (
@@ -73,12 +78,6 @@ const App = () => {
 									/>
 								</>
 							)}
-
-							{/* Fallback Route */}
-							<Route
-								path="*"
-								element={<div>Page Not Found</div>}
-							/>
 						</Routes>
 					</div>
 				</>

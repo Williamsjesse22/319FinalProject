@@ -47,6 +47,11 @@ const Navbar = ({ userRole, isLoggedIn, handleLogout }) => {
 
 					<ul className="nav-list">
 						<li>
+							<Link to="/" onClick={closeNav}>
+								Home
+							</Link>
+						</li>
+						<li>
 							<Link to="../listPets" onClick={closeNav}>
 								View All Pets
 							</Link>
@@ -84,11 +89,11 @@ const Navbar = ({ userRole, isLoggedIn, handleLogout }) => {
 									Log Out
 								</button>
 							) : (
-								<li>
+								<ol>
 									<Link to="../login" onClick={closeNav}>
 										Login
 									</Link>
-								</li>
+								</ol>
 							)}
 						</li>
 					</ul>
