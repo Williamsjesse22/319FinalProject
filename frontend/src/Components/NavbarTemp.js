@@ -84,7 +84,7 @@ const Navbar = ({ userRole, isLoggedIn, handleLogout }) => {
 						<li className="nav-item">
 							{isLoggedIn ? (
 								<button
-									className="btn btn-danger w-100 mt-3"
+									className="btn btn-danger w-30 mt-3"
 									onClick={handleLogout}>
 									Log Out
 								</button>
