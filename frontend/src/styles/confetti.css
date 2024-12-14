@@ -9,6 +9,7 @@
     text-align: center;
     color: #ff6347; /* Tomato red */
     animation: pulse 1.5s infinite;
+    font: 'Sour Gummy';
   }
   
   /* Pulse animation for the congrats text */

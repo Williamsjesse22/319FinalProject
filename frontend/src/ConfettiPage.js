@@ -29,8 +29,8 @@ const ConfettiPage = () => {
             justifyContent: 'center',
             alignItems: 'center',
             height: '100vh',
-            textAlign: 'center',}}>
-			<h1>Congratulations!</h1>
+            textAlign: 'center'}}>
+			<h1 style={{font: 'Sour Gummy'}}>🎉Congratulations!🎉</h1>
 		</div>
 	);
 };
