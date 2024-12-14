@@ -21,7 +21,7 @@ const SearchPets = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(filters), // Send filters as JSON in the request body
+        body: JSON.stringify(filters),
       });
       if (!response.ok) throw new Error("No pets found.");
       const data = await response.json();
@@ -30,61 +30,146 @@ const SearchPets = () => {
       alert("Error fetching pets: " + err.message);
     }
   };
-  
 
   return (
-    <div>
-      <h2>Search Pets</h2>
-      <div className="form-group">
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "20px",
+        maxWidth: "1200px",
+        margin: "0 auto",
+      }}
+    >
+      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Search Pets</h2>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "15px",
+          justifyContent: "center",
+          width: "100%",
+          maxWidth: "600px",
+          marginBottom: "20px",
+        }}
+      >
         <input
           type="text"
           name="name"
           placeholder="Enter Name"
-          className="form-control"
+          style={{
+            flex: "1 1 100%",
+            padding: "10px",
+            border: "1px solid #ddd",
+            borderRadius: "5px",
+            fontSize: "1rem",
+          }}
           onChange={handleChange}
         />
         <input
           type="text"
           name="breed"
           placeholder="Enter Breed"
-          className="form-control"
+          style={{
+            flex: "1 1 100%",
+            padding: "10px",
+            border: "1px solid #ddd",
+            borderRadius: "5px",
+            fontSize: "1rem",
+          }}
           onChange={handleChange}
         />
         <input
           type="text"
           name="animal"
           placeholder="Enter Animal Type"
-          className="form-control"
+          style={{
+            flex: "1 1 100%",
+            padding: "10px",
+            border: "1px solid #ddd",
+            borderRadius: "5px",
+            fontSize: "1rem",
+          }}
           onChange={handleChange}
         />
         <input
           type="text"
           name="age"
           placeholder="Enter Age"
-          className="form-control"
+          style={{
+            flex: "1 1 100%",
+            padding: "10px",
+            border: "1px solid #ddd",
+            borderRadius: "5px",
+            fontSize: "1rem",
+          }}
           onChange={handleChange}
         />
-        <button className="btn btn-primary mt-2" onClick={fetchPetsByFilters}>
+        <button
+          style={{
+            flex: "1 1 100%",
+            padding: "10px",
+            backgroundColor: "#007bff",
+            color: "white",
+            fontSize: "1rem",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+          onClick={fetchPetsByFilters}
+        >
           Search
         </button>
       </div>
       {pets.length > 0 ? (
-        <div className="row mt-4">
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
           {pets.map((pet) => (
-            <div key={pet.petId} className="col-md-4">
-              <div className="card mb-4">
-                <img src={pet.picture} alt={pet.name} className="card-img-top" />
-                <div className="card-body">
-                  <h5>{pet.name}</h5>
-                  <p>{pet.breed}</p>
-                  <p>Age: {pet.age}</p>
-                </div>
+            <div
+              key={pet.petId}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "1px solid #ddd",
+                borderRadius: "10px",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                width: "300px",
+                overflow: "hidden",
+                textAlign: "center",
+                padding: "10px",
+              }}
+            >
+              <img
+                src={pet.picture}
+                alt={pet.name}
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                }}
+              />
+              <div style={{ padding: "10px" }}>
+                <h5 style={{ margin: "10px 0" }}>{pet.name}</h5>
+                <p style={{ margin: "5px 0" }}>{pet.breed}</p>
+                <p style={{ margin: "5px 0" }}>Age: {pet.age}</p>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <p className="mt-4">No pets found.</p>
+        <p style={{ marginTop: "20px", fontSize: "1.2rem", color: "#666" }}>
+          No pets found.
+        </p>
       )}
     </div>
   );

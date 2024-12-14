@@ -1,3 +1,5 @@
+// /* global confetti */
+// const defaults = { startVelocity: 15, spread: 360, ticks: 500, zIndex: 0 };
 // const defaults = { startVelocity: 15, spread: 360, ticks: 500, zIndex: 0 };
 
 // function randomInRange(min, max) {

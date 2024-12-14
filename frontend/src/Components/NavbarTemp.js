@@ -27,7 +27,7 @@ const Navbar = ({ userRole, isLoggedIn, handleLogout }) => {
 				id="open-nav"
 				className="material-symbols-outlined"
 				onClick={openNav}>
-				menu
+				&equiv;
 			</button>
 
 			<dialog
@@ -41,7 +41,7 @@ const Navbar = ({ userRole, isLoggedIn, handleLogout }) => {
 							id="close-nav"
 							className="material-symbols-outlined"
 							onClick={closeNav}>
-							close
+							X
 						</button>
 					</header>
 
