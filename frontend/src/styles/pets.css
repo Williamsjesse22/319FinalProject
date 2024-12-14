@@ -1,64 +1,101 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f4f4f9;
-  color: #333;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	background: #f4f4f9;
+	color: #333;
 }
-/*--grauconejo13 - Vanessa victorino --*/
+
+/* Card Container */
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  position: relative;
+	perspective: 1000px;
+	margin: 2rem;
+	cursor: pointer;
 }
 
+/* Card Styles */
 .card {
-  background: #ffffff;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 500px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  position: relative;
+	--rX: 0;
+	--rY: 0;
+	transform: rotateX(calc(var(--rX) * 1.5deg))
+		rotateY(calc(var(--rY) * 1.5deg));
+	background: #ffffff;
+	border: 2px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
 }
 
-
-.card:hover {
-  transform: scale(1.1) translateY(-10px) translateX(-5px) translateX(5px) translateZ(-20px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  z-index: 10; /* Ensures the hovered card is on top */
+/* Reflection Layer */
+.card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120%; /* Slightly larger to accommodate tilts */
+	height: 120%; /* Slightly larger to accommodate tilts */
+	background: linear-gradient(
+		calc(90deg + var(--rX) * 1deg + var(--rY) * 1deg),
+		rgba(255, 255, 255, 0.2) 20%,
+		rgba(255, 255, 255, 0.4) 50%,
+		rgba(255, 255, 255, 0.1) 80%
+	);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.1s ease;
 }
+
+/* Make Reflection Visible at Certain Tilt Angles */
+.card--active::before {
+	opacity: calc((abs(var(--rX)) + abs(var(--rY))) / 40);
+	transform: translate(calc(var(--rX) * 0.5px), calc(var(--rY) * 0.5px));
+}
+
+/* Active State for Card on Hover */
+.card--active {
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.card img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+/* Card Body */
+.card-body {
+	padding: 15px;
+}
+
+/* Card Hover Effect */
+/* .card:hover {
+	transform: scale(1.05);
+} */
 
 .symbol {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 10px 0;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 10px 0;
 }
 
-
-.card:not(:hover) {
-  /* filter: blur(5px); */
-  transform: scale(0.9);
-  z-index: 0;
-}
-
-/* Blur out other cards when one is hovered */
-/* .card-container .card:hover ~ .card {
+/* .card:not(:hover) {
+	filter: blur(5px);
+	transform: scale(0.9);
+	z-index: 0;
+} */
+/* 
+  .card-container .card:hover ~ .card {
   filter: blur(5px);
   transform: scale(0.95);
   z-index: 1;
-} */
+}
 
-/* Ensure non-hovered cards are displayed clearly by default */
-/* .card-container .card:not(:hover) {
+  .card-container .card:not(:hover) {
   filter: none;
 } */
