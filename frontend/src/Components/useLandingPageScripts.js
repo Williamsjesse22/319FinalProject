@@ -21,7 +21,7 @@ const useLandingPageScripts = () => {
 			decoration.style.opacity = '0.5';
 		});
 
-		const cards = document.querySelectorAll('.card');
+		const cards = document.querySelectorAll('.pinochio-card');
 		cards.forEach((card) => {
 			const randomColor = getRandomColor();
 			card.style.backgroundColor = randomColor; // Apply color to the entire card
@@ -201,7 +201,7 @@ const useLandingPageScripts = () => {
 		}
 
 		function selectElements() {
-			cards = document.getElementsByClassName('card');
+			cards = document.getElementsByClassName('pinochio-card');
 			nCards = cards.length;
 			cover = document.getElementById('cover');
 			openContent = document.getElementById('open-content');
@@ -221,16 +221,24 @@ const useLandingPageScripts = () => {
 		function attachListenerToCard(i) {
 			cards[i].addEventListener('click', function (e) {
 				const card = getCardElement(e.target);
-				onCardClick(card, i);
+				if (card) {
+					onCardClick(card, i);
+				} else {
+					console.warn('No parent with class "pinochio-card" found');
+				}
 			});
 		}
 
 		function onCardClick(card) {
+			console.log('Card clicked:', card);
 			currentCard = card;
-			currentCard.classList.add('clicked');
+			currentCard.classList.add('clicked'); // Add the 'clicked' class to animate the image out
+
+			// Delay the cover animation to allow the image to disappear first
 			setTimeout(() => {
 				animateCoverUp(currentCard);
-			}, 500);
+			}, 500); // Adjust the delay to match your CSS animation duration
+
 			animateOtherCards(currentCard, true);
 			openContent.classList.add('open');
 		}
@@ -297,12 +305,19 @@ const useLandingPageScripts = () => {
 		}
 
 		function onCloseClick() {
+			if (!currentCard) return; // Ensure currentCard is defined before proceeding
+
 			openContent.classList.remove('open');
 			animateCoverBack(currentCard);
 			animateOtherCards(currentCard, false);
 		}
 
 		function animateCoverBack(card) {
+			if (!card) {
+				console.warn('animateCoverBack called with undefined card');
+				return;
+			}
+
 			const cardPosition = card.getBoundingClientRect();
 			setCoverPosition(cardPosition);
 			cover.style.transform =
@@ -313,14 +328,21 @@ const useLandingPageScripts = () => {
 				cover.style.width = '0px';
 				cover.style.height = '0px';
 				pageIsOpen = false;
-				currentCard.classList.remove('clicked');
+				if (currentCard) {
+					currentCard.classList.remove('clicked');
+					currentCard = null;
+				}
 			}, 301);
 		}
 
 		function getCardElement(el) {
-			return el.classList.contains('card')
-				? el
-				: getCardElement(el.parentElement);
+			while (el && el !== document.body) {
+				if (el.classList && el.classList.contains('pinochio-card')) {
+					return el;
+				}
+				el = el.parentElement;
+			}
+			return null;
 		}
 
 		function resize() {
